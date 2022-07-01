@@ -1,0 +1,41 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Jun 12, 2022, 2:54:11 PM
+    Author     : zahwa
+*/
+.button.style{
+    -fx-background-color:#FFFFFF
+}
+
+.vbox.style{
+    -fx-background-color: #009aae
+}
+
+.border.style{
+    -fx-background-color: #ACCACF
+}
+
+.text.style{
+    
+}
+
+.text-area .content{
+    -fx-background-color: #ACCACF
+}
+
+.gradient-background{
+    -fx-background-color: linear-gradient(from 25% 25% to 100% 100%,#00A9F0, #7AE2E1 ,#00E79D )
+}
+
+.container{
+    -fx-background-color: rgba(255,255,255,0.2);
+    -fx-background-radius: 10;
+}
+
+.shadow {
+    -fx-effect: dropshadow (three-pass-box, rgba(0,0,0,0.2), 10.0, 0.0, 0.0, 10.0);
+    
+}

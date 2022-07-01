@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: ACCACF;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui_tubes.DaftarPenggunaController">
+   <children>
+      <Pane layoutX="14.0" layoutY="72.0" opacity="0.39" prefHeight="516.0" prefWidth="555.0" style="-fx-background-color: WHITE; -fx-background-radius: 20;" />
+      <TableView fx:id="tvData" layoutX="26.0" layoutY="97.0" prefHeight="467.0" prefWidth="530.0">
+         <columns>
+            <TableColumn fx:id="tcUsername" prefWidth="124.79998779296875" text="Username" />
+            <TableColumn fx:id="tcDomisili" prefWidth="128.800048828125" text="Domisili" />
+            <TableColumn fx:id="tcGoldar" prefWidth="127.199951171875" text="Golongan Darah" />
+            <TableColumn fx:id="tcNoTelp" prefWidth="148.800048828125" text="Nomor Telfon" />
+         </columns>
+      </TableView>
+      <Label layoutX="172.0" layoutY="27.0" text="Data Calon Pendonor" textFill="#009aae">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Separator layoutX="423.0" layoutY="42.0" prefHeight="3.0" prefWidth="132.0" />
+      <Separator layoutX="27.0" layoutY="43.0" prefHeight="3.0" prefWidth="132.0" />
+   </children>
+</AnchorPane>

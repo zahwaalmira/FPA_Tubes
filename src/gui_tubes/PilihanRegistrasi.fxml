@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: FFFFFF;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui_tubes.PilihanRegistrasiController">
+   <children>
+      <Pane prefHeight="609.0" prefWidth="450.0" style="-fx-background-color: B4C9CE;">
+         <children>
+            <ImageView fitHeight="421.0" fitWidth="420.0" layoutX="15.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/bonbon-boy-thinking-about-the-question.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Text fill="#009aae" layoutX="506.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registrasi Pengguna" wrappingWidth="250.5859375">
+         <font>
+            <Font name="Swis721 Hv BT Heavy" size="48.0" />
+         </font>
+      </Text>
+      <Button layoutX="505.0" layoutY="266.0" mnemonicParsing="false" onAction="#handleButtonRegisUser" prefHeight="66.0" prefWidth="251.0" style="-fx-background-color: #009aae; -fx-background-radius: 35;" text="Daftar sebagai Calon Pendonor" textFill="#fffdfd">
+         <font>
+            <Font name="Swis721 WGL4 BT Bold" size="14.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
+      <Button layoutX="505.0" layoutY="362.0" mnemonicParsing="false" onAction="#handleButtonRegisAdmin" prefHeight="66.0" prefWidth="251.0" style="-fx-background-color: #009aae; -fx-background-radius: 35;" text="Daftar sebagai Admin" textFill="#fffdfd">
+         <font>
+            <Font name="Swis721 WGL4 BT Bold" size="14.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
+   </children>
+</AnchorPane>
