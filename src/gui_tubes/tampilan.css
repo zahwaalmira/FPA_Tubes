@@ -39,3 +39,13 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     -fx-effect: dropshadow (three-pass-box, rgba(0,0,0,0.2), 10.0, 0.0, 0.0, 10.0);
     
 }
+
+.white-background{
+    -fx-background-color: #FFFFFF;
+}
+
+.right-side-border{
+ 
+}
+
+

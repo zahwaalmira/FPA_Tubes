@@ -14,6 +14,8 @@ import javafx.collections.ObservableList;
 public class DataList {
 
     private ObservableList<Data> listData;
+    
+    
     int totalAPLUS = 0;
     int totalBPLUS = 0;
     int totalABPLUS = 0;
@@ -55,29 +57,45 @@ public class DataList {
         listData.add(new Data("patandyawisnu", "Semarang", "B+", "081232223456"));
         listData.add(new Data("rasyidahmad", "Jakarta", "A+", "081234448866"));
     }
+    
+     public void dataTable(){
+         
+        TableViewController table =  new TableViewController();
+        table.openTabel();
+        for (int i = 0; i < table.dataPengguna.size(); i++) {
+            table.pengguna.add(table.dataPengguna.get(i));
+        }
+        DataList data = new DataList();
+    }
 
     public void dataChart() {
+//            ArrayList<Data> dataPengguna = new ArrayList<>();
+        TableViewController table =  new TableViewController();
+        table.openTabel();
         
-        for (int i = 0; i < listData.size(); i++) {
-            System.out.println(listData.size());
 
-            String goldar = listData.get(i).getGoldar();
-            if (goldar.equals("A+")) {
+        for (int i = 0; i < table.dataPengguna.size(); i++) {
+
+//            String goldar = listData.get(i).getGoldar();
+            if (table.dataPengguna.contains("A+")) {
                 totalAPLUS++;
-            } else if (goldar.equals("B+")) {
+            } else if (table.dataPengguna.contains("B+")) {
                 totalBPLUS++;
-            } else if (goldar.equals("AB+")) {
+            } else if (table.dataPengguna.contains("AB+")) {
                 totalABPLUS++;
-            } else if (goldar.equals("A-")) {
+            } else if (table.dataPengguna.contains("A-")) {
                 totalAMIN++;
-            } else if (goldar.equals("B-")) {
+            } else if (table.dataPengguna.contains("B-")) {
                 totalBMIN++;
-            } else if (goldar.equals("AB-")) {
+            } else if (table.dataPengguna.contains("AB-")) {
                 totalABMIN++;
-            } else if (goldar.equals("O-")) {
+            } else if (table.dataPengguna.contains("O-")) {
                 totalOMIN++;
 
+            } else if (table.dataPengguna.contains("O+")) {
+                totalOPLUS++;
             }
+           
         }
 
     }
@@ -145,10 +163,25 @@ public class DataList {
     public void setTotalOMIN(int totalOMIN) {
         this.totalOMIN = totalOMIN;
     }
+    
+//    public void dataTable(){
+//        TableViewController table =  new TableViewController();
+//        table.openTabel();
+//        for (int i = 0; i < table.dataPengguna.size(); i++) {
+//            table.pengguna.add(table.dataPengguna.get(i));
+//        }
+//        DataList data = new DataList();
+//    }
 
     @Override
     public String toString() {
         return "DataList{" + "totalAPLUS=" + totalAPLUS + ", totalBPLUS=" + totalBPLUS + ", totalABPLUS=" + totalABPLUS + ", totalOPLUS=" + totalOPLUS + ", totalAMIN=" + totalAMIN + ", totalBMIN=" + totalBMIN + ", totalABMIN=" + totalABMIN + ", totalOMIN=" + totalOMIN + '}';
+    }
+    
+    public void showData(){
+        for (int i =0; i<1; i++){
+            System.out.println(listData.toString());
+        }
     }
 
 }

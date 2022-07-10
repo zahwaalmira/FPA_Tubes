@@ -29,6 +29,10 @@ public class MultisceneController implements Initializable {
     @FXML
     private BorderPane mainPane;
     
+    @FXML
+    private BorderPane mainPane1;
+    
+    
      @FXML
     private void handleButtonHalamanDaftarPengguna(ActionEvent event) {
         Pane halaman = bukaScene.getPane("DaftarPengguna");
@@ -84,14 +88,14 @@ public class MultisceneController implements Initializable {
     
     @FXML
     private void handleButtonHalamanLogOut(ActionEvent event)throws IOException {
-        Parent scene2 = FXMLLoader.load(getClass().getResource("Login.fxml"));
+        Parent scene2 = FXMLLoader.load(getClass().getResource("LandingPage.fxml"));
         
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         
         Scene scene = new Scene(scene2);
-        
+        stage.setResizable(false);
         stage.setScene(scene);
-        stage.setTitle("Login");
+        stage.setTitle("Landing page");
         stage.show();
         System.out.println("Berhasil klik log out");
     }
@@ -102,6 +106,7 @@ public class MultisceneController implements Initializable {
          Pane halaman;
         halaman = bukaScene.getPane("Beranda");
         mainPane.setCenter(halaman);
+        
     }    
     
 }

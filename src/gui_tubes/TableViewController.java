@@ -17,7 +17,10 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableColumn.CellEditEvent;
 import javafx.scene.control.TableView;
@@ -31,47 +34,15 @@ import javafx.scene.control.cell.TextFieldTableCell;
  * @author zahwa
  */
 public class TableViewController implements Initializable {
-     XStream xstream = new XStream(new StaxDriver());
-    void openTabel() {
-        FileInputStream berkasMasuk;
-        try {
-            berkasMasuk = new FileInputStream("berkas.xml");
-            int isi;
-            char c;
-            String s = "";
-            while ((isi = berkasMasuk.read()) != - 1) {
-                c = (char) isi;
-                s = s + c;
-            }
-            dataPengguna = (ArrayList<Data>) xstream.fromXML(s);
-            berkasMasuk.close();
-        } catch (Exception e) {
-            System.out.println("Terjadi kesalahan: " + e.getMessage());
-        }
-    }
-    
-    void SaveAndCreate(){
-        FileOutputStream outputDoc;
-        String xml = xstream.toXML(dataPengguna);
-        File f = new File("berkas.xml");
-        try{
-            byte[] data = xml.getBytes();
-            outputDoc = new FileOutputStream("berkas.xml");
-            outputDoc.write(data);
-            outputDoc.close();
-            System.out.println("Berhasil tambah/edit/hapus data");
-        }catch(Exception error){
-            System.err.println("An error occur: " + error.getMessage());
-        }
-        
-    }
-    
+    XStream xstream = new XStream(new StaxDriver());
+
     DataList data;
    
     ArrayList<Data> dataPengguna = new ArrayList<>();
     ObservableList pengguna = observableArrayList();
+    Alert alert = new Alert(Alert.AlertType.WARNING);
     
-    @FXML
+     @FXML
     private TableView<Data> tvData;
     
     @FXML
@@ -98,53 +69,111 @@ public class TableViewController implements Initializable {
     @FXML
     private TextField tfNoTelp;
     
+
+     
+    void openTabel() {
+        FileInputStream berkasMasuk;
+        try {
+            berkasMasuk = new FileInputStream("berkas.xml");
+            int isi;
+            char c;
+            String s = "";
+            while ((isi = berkasMasuk.read()) != - 1) {
+                c = (char) isi;
+                s = s + c;
+            }
+            dataPengguna = (ArrayList<Data>) xstream.fromXML(s);
+            berkasMasuk.close();
+        } catch (Exception e) {
+            System.out.println("Terjadi kesalahan: " + e.getMessage());
+        }
+    }
     
+    void SaveAndCreate(){
+        FileOutputStream outputDoc;
+        String xml = xstream.toXML(dataPengguna);
+        File f = new File("berkas.xml");
+        try{
+            byte[] data = xml.getBytes("UTF-8");
+            outputDoc = new FileOutputStream("berkas.xml");
+            outputDoc.write(data);
+            outputDoc.close();
+            System.out.println("Berhasil tambah/edit/hapus data");
+        }catch(Exception error){
+            System.err.println("An error occur: " + error.getMessage());
+        }
+        
+    }
+            
+
     @FXML
     private void handleButtonTambah(ActionEvent event) {
-//        data = new DataList();
-        File f = new File("berkas.xml");
-        if (f.exists() && !f.isDirectory()) {
-            System.out.println("File ada");
-            openTabel();
-        }
+        openTabel(); 
+
         String username = tfUsername.getText();
         String domisili = tfDomisili.getText();
         String goldar = cbGoldar.getValue().toString();
         String noTelp = tfNoTelp.getText();
-        data.setData(username, domisili, goldar, noTelp);
-        System.out.println("Penambahan berhasil");
-        
-        
-        dataPengguna.add(new Data(username, domisili, goldar, noTelp));
-                tvData.setItems(pengguna);
+      
+ 
+        if (!noTelp.matches("[0-9]+")) {
+            
+            alert.setTitle("Perhatian");
+            alert.setHeaderText("Nomor telepon harus berupa angka");
+            alert.setContentText("Silahkan periksa kembali");
+            alert.showAndWait();
+            tfNoTelp.setText(" ");
+        } else if (noTelp.length() != 12) {
+            alert.setTitle("Perhatian");
+            alert.setHeaderText("Jumlah digit nomor telepon harus 12");
+            alert.setContentText("Silahkan periksa kembali");
+            alert.showAndWait();
+        } else if (username.isEmpty() || domisili.isEmpty() || goldar.isEmpty() 
+                || noTelp.isEmpty()) {
+            alert.setTitle("Perhatian");
+            alert.setHeaderText("Informasi data belum lengkap");
+            alert.setContentText("Silahkan lengkapi data yang masih kosong");
+            alert.showAndWait();
+        } else {
+            System.out.println("Penambahan berhasil");
+            dataPengguna.add(new Data(username, domisili, goldar, noTelp));
 
-        tfUsername.setText("");
-        tfDomisili.setText("");
-        cbGoldar.getSelectionModel().clearSelection();
-        tfNoTelp.setText("");
-        
-        SaveAndCreate();
+            tfUsername.setText("");
+            tfDomisili.setText("");
+            cbGoldar.getSelectionModel().clearSelection();
+            tfNoTelp.setText("");
+
+            SaveAndCreate();
+        }
+
     }
     
+    
     @FXML
-    private void handleButtonHapus(ActionEvent event) {
-        File f = new File("berkas.xml");
-        if (f.exists() && !f.isDirectory()) {
-            System.out.println("File ada");
-            openTabel();
+    public void handleButtonHapus(ActionEvent event) {
+        openTabel();
+        TableView.TableViewSelectionModel selectionModel = tvData.getSelectionModel();
+        selectionModel.setSelectionMode(SelectionMode.SINGLE);
+        if (selectionModel.isEmpty()) {
+            alert.setTitle("Perhatian");
+            alert.setHeaderText("Anda belum memilih data yang ingin dihapus");
+            alert.setContentText("Silahkan periksa kembali");
+            alert.showAndWait();
+
+        } else {
+            int i = selectionModel.getSelectedIndex();
+            dataPengguna.remove(i);
+            pengguna.remove(i);
+
+            SaveAndCreate();
         }
-//        int selectedIndex = tvData.getSelectionModel().getSelectedIndex();
-//        data.getData().remove(selectedIndex);
-        SaveAndCreate();
+      
     }
     
     @FXML
     private void handleButtonEdit(ActionEvent event) {
-        File f = new File("berkas.xml");
-        if (f.exists() && !f.isDirectory()) {
-            System.out.println("File ada");
             openTabel();
-        }
+        
         tvData.setEditable(true);
         tcUsername.setCellFactory(TextFieldTableCell.forTableColumn());
         tcDomisili.setCellFactory(TextFieldTableCell.forTableColumn());
@@ -157,6 +186,8 @@ public class TableViewController implements Initializable {
             public void handle(CellEditEvent<Data, String> event){
                 Data data = event.getRowValue();
                 data.setUsername(event.getNewValue());
+//                dataPengguna.add(data);
+                SaveAndCreate();
             }
                 
         });
@@ -167,6 +198,8 @@ public class TableViewController implements Initializable {
             public void handle(CellEditEvent<Data, String> event){
                 Data data = event.getRowValue();
                 data.setDomisili(event.getNewValue());
+//                dataPengguna.add(data);
+                SaveAndCreate();
             }
                 
         });
@@ -177,6 +210,8 @@ public class TableViewController implements Initializable {
             public void handle(CellEditEvent<Data, String> event){
                 Data data = event.getRowValue();
                 data.setGoldar(event.getNewValue());
+//                dataPengguna.add(data);
+                SaveAndCreate();
             }
                 
         });
@@ -187,40 +222,46 @@ public class TableViewController implements Initializable {
             public void handle(CellEditEvent<Data, String> event){
                 Data data = event.getRowValue();
                 data.setNotelp(event.getNewValue());
+//                dataPengguna.add(data);
+                SaveAndCreate();
             }
                 
         });
+        
+        for (int i = 0; i < dataPengguna.size(); i++){
+            pengguna.add(dataPengguna.get(i));
+        }
+        tvData.setItems(pengguna);
         SaveAndCreate();
-            
         
     }
     
+
+
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        openTabel();
         cbGoldar.setValue("Golongan Darah");
         cbGoldar.getItems().addAll("A+","B+","O+","AB+","A-", "B-", "O-", "AB-");
-        
+       
         tcUsername.setCellValueFactory(new PropertyValueFactory<>("username"));
         tcDomisili.setCellValueFactory(new PropertyValueFactory<>("domisili"));
         tcGoldar.setCellValueFactory(new PropertyValueFactory<>("goldar"));
         tcNoTelp.setCellValueFactory(new PropertyValueFactory<>("notelp"));
-        
-        data = new DataList();
-        data.setDummy();
-//        tvData.setItems(data.getData());
-        openTabel();
+
         for (int i = 0; i < dataPengguna.size(); i++) {
             pengguna.add(dataPengguna.get(i));
 
         }
-        for (int i = 0; i < data.getData().size(); i++) {
-            pengguna.add(data.getData());
-            
-        }
+        
         tvData.setItems(pengguna);
-        tvData.setItems(data.getData());
-    }    
+
+        
+        SaveAndCreate();
+    }  
     
-}
+    }
+
+

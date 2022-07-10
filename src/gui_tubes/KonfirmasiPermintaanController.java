@@ -22,27 +22,34 @@ public class KonfirmasiPermintaanController implements Initializable {
     /**
      * Initializes the controller class.
      */
-    @FXML
-    private TextField tfUsernameTujuan;
+
     
     @FXML
-    private TextField tfDomilisi;
-    
-    @FXML
-    private TextField tfNoTelp;
-    
-    @FXML
-    private ChoiceBox cbUrgensi;
-    
-    @FXML
-    private void handleButtonIzin(ActionEvent event) {
+    private void handleButtonBroadcast1(ActionEvent event) {
+        
+    }
+        @FXML
+    private void handleButtonBroadcast2(ActionEvent event) {
+        
+    }
+        @FXML
+    private void handleButtonBroadcast3(ActionEvent event) {
+        
+    }
+        @FXML
+    private void handleButtonBroadcast4(ActionEvent event) {
+        
+    }
+        @FXML
+    private void handleButtonBroadcast5(ActionEvent event) {
+        
+    }
+        @FXML
+    private void handleButtonBroadcast6(ActionEvent event) {
         
     }
     
-    @FXML
-    private void handleButtonTolak(ActionEvent event) {
 
-    }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {

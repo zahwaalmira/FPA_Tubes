@@ -4,6 +4,11 @@
  */
 package gui_tubes;
 
+import com.thoughtworks.xstream.XStream;
+import com.thoughtworks.xstream.io.xml.StaxDriver;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -20,89 +25,94 @@ import javafx.scene.control.TextField;
  * @author zahwa
  */
 public class StatistikController implements Initializable {
-    DataList data;
+     XStream xstream = new XStream(new StaxDriver());
+    ArrayList<Data> dataPengguna = new ArrayList<>();
+    Data data;
     XYChart.Series<String, Integer> dataGoldar = new XYChart.Series<>();
+         int totalAPLUS = 0;
+    int totalBPLUS = 0;
+    int totalABPLUS = 0;
+    int totalOPLUS = 0;
+    int totalAMIN = 0;
+    int totalBMIN = 0;
+    int totalABMIN = 0;
+    int totalOMIN = 0;
     
     @FXML
     private BarChart bcGoldar;
     
-    @FXML
-    private ChoiceBox cbGoldar;
-    
-    @FXML
-    private TextField tfJumlah;
-    
-
-    
-    @FXML
-    private void handleTambahAction(ActionEvent event) {
-        System.out.println("TambahButton is clicked");
-        String goldar = cbGoldar.getValue().toString();
-        int jumlah = Integer.valueOf(tfJumlah.getText());
-        
-        for(int i = 0; i < dataGoldar.getData().size(); i++){
-            int nilaiAwal = Integer.valueOf(dataGoldar.getData().get(i).YValueProperty().get());
-            if(dataGoldar.getData().get(i).XValueProperty().get().equals(goldar)){
-                dataGoldar.getData().get(i).YValueProperty().set(nilaiAwal + jumlah);
+    void openTabel() {
+        FileInputStream berkasMasuk;
+        try {
+            berkasMasuk = new FileInputStream("berkas.xml");
+            int isi;
+            char c;
+            String s = "";
+            while ((isi = berkasMasuk.read()) != - 1) {
+                c = (char) isi;
+                s = s + c;
             }
+            dataPengguna = (ArrayList<Data>) xstream.fromXML(s);
+            berkasMasuk.close();
+        } catch (Exception e) {
+            System.out.println("Terjadi kesalahan: " + e.getMessage());
         }
-        
-        cbGoldar.getSelectionModel().clearSelection();
-        tfJumlah.setText("");
     }
     
-    @FXML
-    private void handleKurangAction(ActionEvent event) {
-        System.out.println("KurangButton is clicked");
-        String goldar = cbGoldar.getValue().toString();
-        int jumlah = Integer.valueOf(tfJumlah.getText());
-        
-        for(int i = 0; i < dataGoldar.getData().size(); i++){
-            int nilaiAwal = Integer.valueOf(dataGoldar.getData().get(i).YValueProperty().get());
-            if(dataGoldar.getData().get(i).XValueProperty().get().equals(goldar)){
-                dataGoldar.getData().get(i).YValueProperty().set(nilaiAwal - jumlah);
-            }
-        }
-        
-        cbGoldar.getSelectionModel().clearSelection();
-        tfJumlah.setText("");
-  
-    }
-    
-    @FXML
-    private void handlecoba(ActionEvent event) {
-        System.out.println(data.totalABMIN);
-    }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        data = new DataList();
-        cbGoldar.setValue("Golongan Darah");
-        cbGoldar.getItems().addAll("A+","B+","O+","AB+","A-", "B-", "O-", "AB-");
+
+        openTabel();
+
+        for(int i = 0; i < dataPengguna.size(); i++){
+           data = (Data) dataPengguna.get(i);
+           if(data.getGoldar().equals("A+")){
+               totalAPLUS++;
+           }else if(data.getGoldar().equals("B+")){
+               totalBPLUS++;
+           }else if(data.getGoldar().equals("AB+")){
+               totalABPLUS++;
+           }else if(data.getGoldar().equals("O+")){
+               totalOPLUS++;
+           }else if(data.getGoldar().equals("A-")){
+               totalAMIN++;
+           }else if(data.getGoldar().equals("B-")){
+               totalBMIN++;
+           }else if(data.getGoldar().equals("AB-")){
+               totalABMIN++;
+           }else if(data.getGoldar().equals("O-")){
+               totalOMIN++;
+           }
+            
+        }
+        dataGoldar.getData().add(new XYChart.Data("A+", totalAPLUS++));
+            dataGoldar.getData().add(new XYChart.Data("B+", totalBPLUS));
+            dataGoldar.getData().add(new XYChart.Data("O+", totalOPLUS));
+            dataGoldar.getData().add(new XYChart.Data("AB+", totalABPLUS));
+            dataGoldar.getData().add(new XYChart.Data("A-", totalAMIN));
+            dataGoldar.getData().add(new XYChart.Data("B-", totalBMIN));
+            dataGoldar.getData().add(new XYChart.Data("O-", totalOMIN));
+            dataGoldar.getData().add(new XYChart.Data("AB-", totalABMIN));
+   
+//        for (int i = 0; i < table.dataPengguna.size(); i++) {
+//            table.pengguna.add(table.dataPengguna.get(i));
+//        }
+//        data = new DataList();
+//        
+//        System.out.println(data.totalAPLUS);
+//        data.setDummy();
+//        data.dataChart();
         
-  
-//        dataGoldar.getData().add(new XYChart.Data("A+", 770));
-//        dataGoldar.getData().add(new XYChart.Data("B+", 900));
-//        dataGoldar.getData().add(new XYChart.Data("O+", 1200));
-//        dataGoldar.getData().add(new XYChart.Data("AB+", 500));
-//        dataGoldar.getData().add(new XYChart.Data("A-", 400));
-//        dataGoldar.getData().add(new XYChart.Data("B-", 550));
-//        dataGoldar.getData().add(new XYChart.Data("O-", 670));
-//        dataGoldar.getData().add(new XYChart.Data("AB-", 200));
-////    
-        data.setDummy();
-        data.dataChart();
-        System.out.println(data.toString());
-        
-        dataGoldar.getData().add(new XYChart.Data("A+", data.totalAPLUS));
-        dataGoldar.getData().add(new XYChart.Data("B+", data.totalBPLUS));
-        dataGoldar.getData().add(new XYChart.Data("O+", data.totalOPLUS));
-        dataGoldar.getData().add(new XYChart.Data("AB+", data.totalABPLUS));
-        dataGoldar.getData().add(new XYChart.Data("A-", data.totalAMIN));
-        dataGoldar.getData().add(new XYChart.Data("B-", data.totalBMIN));
-        dataGoldar.getData().add(new XYChart.Data("O-", data.totalOMIN));
-        dataGoldar.getData().add(new XYChart.Data("AB-", data.totalABMIN));
+//        dataGoldar.getData().add(new XYChart.Data("A+", data.totalAPLUS));
+//        dataGoldar.getData().add(new XYChart.Data("B+", data.totalBPLUS));
+//        dataGoldar.getData().add(new XYChart.Data("O+", data.totalOPLUS));
+//        dataGoldar.getData().add(new XYChart.Data("AB+", data.totalABPLUS));
+//        dataGoldar.getData().add(new XYChart.Data("A-", data.totalAMIN));
+//        dataGoldar.getData().add(new XYChart.Data("B-", data.totalBMIN));
+//        dataGoldar.getData().add(new XYChart.Data("O-", data.totalOMIN));
+//        dataGoldar.getData().add(new XYChart.Data("AB-", data.totalABMIN));
         
         
              

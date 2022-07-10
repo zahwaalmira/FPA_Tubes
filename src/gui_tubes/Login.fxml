@@ -3,6 +3,7 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
@@ -13,81 +14,71 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: FFFFFF;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui_tubes.LoginController">
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: FFFFFF;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui_tubes.LoginController">
    <children>
-      <TextField fx:id="tfPassword" layoutX="501.0" layoutY="255.0" prefHeight="38.0" prefWidth="250.0" style="-fx-background-radius: 20; -fx-background-color: E3DEDE; -fx-border-radius: 20; -fx-border-color: #959595;" />
-      <ImageView fitHeight="296.0" fitWidth="351.0" layoutX="451.0" layoutY="95.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="276.0" fitWidth="393.0" layoutX="617.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/jungle-lines-10.png" />
          </image>
       </ImageView>
-      <Pane prefHeight="609.0" prefWidth="450.0" style="-fx-background-color: B4C9CE;">
+      <TextField fx:id="tfPassword" layoutX="685.0" layoutY="316.0" prefHeight="38.0" prefWidth="250.0" style="-fx-background-radius: 10; -fx-background-color: FFFFFF; -fx-border-radius: 10; -fx-border-color: #009aae;" />
+      <Pane prefHeight="610.0" prefWidth="614.0" style="-fx-background-color: B4C9CE;">
          <children>
             <Pane layoutX="-25.0" layoutY="109.0" prefWidth="480.0" />
-            <ImageView fitHeight="610.0" fitWidth="458.0" layoutX="-14.0" layoutY="151.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="610.0" fitWidth="622.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../img/image-from-rawpixel-id-462256-jpeg.jpg" />
                </image>
             </ImageView>
-            <Text fill="#009aae" layoutX="58.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Goldarium" textAlignment="CENTER">
-               <font>
-                  <Font name="Swis721 Hv BT Heavy" size="64.0" />
-               </font>
-            </Text>
-            <Text fill="#009aae" layoutX="167.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Give Blood Save Life">
-               <font>
-                  <Font name="Swis721 Lt BT Light" size="13.0" />
-               </font>
-            </Text>
          </children>
       </Pane>
-      <TextField fx:id="tfUsername" layoutX="501.0" layoutY="202.0" prefHeight="38.0" prefWidth="250.0" promptText="Username" style="-fx-background-color: E3DEDE; -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #959595;" />
-      <Text fill="#009aae" layoutX="535.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Login" textAlignment="CENTER" wrappingWidth="168.7080078125">
+      <TextField fx:id="tfUsername" layoutX="685.0" layoutY="250.0" prefHeight="38.0" prefWidth="250.0" style="-fx-background-color: FFFFFF; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: ACCACF;" />
+      <Text fill="#009aae" layoutX="719.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Login" textAlignment="CENTER" wrappingWidth="168.7080078125">
          <font>
-            <Font name="Swis721 Hv BT Heavy" size="36.0" />
+            <Font name="Swis721 Hv BT Heavy" size="48.0" />
          </font>
       </Text>
-      <Text fill="#009aae" layoutX="535.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Selamat datang di Goldarium!">
+      <Text fill="#009aae" layoutX="719.0" layoutY="209.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Selamat datang di Goldarium!">
          <font>
             <Font name="Swis721 Lt BT Light" size="13.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="535.0" layoutY="367.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Masuk sebagai calon pendonor" wrappingWidth="183.99997558593736">
-         <font>
-            <Font name="Swis721 WGL4 BT Bold" size="12.0" />
-         </font>
-      </Text>
-      <Text fill="#9b9696" layoutX="502.0" layoutY="542.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dengan masuk atau mendaftar, Anda menyetujui Syarat &amp; Ketentuan serta Privasi GOLDARIUM." textAlignment="CENTER" wrappingWidth="250.4000000000001">
+      <Text fill="#9b9696" layoutX="670.0" layoutY="536.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dengan masuk atau mendaftar, Anda menyetujui Syarat &amp; Ketentuan serta Privasi GOLDARIUM." textAlignment="CENTER" wrappingWidth="250.4000000000001">
          <font>
             <Font name="Swis721 Lt BT Light" size="12.0" />
          </font>
       </Text>
-      <Button layoutX="535.0" layoutY="347.0" mnemonicParsing="false" onAction="#handleButtonLoginUser" prefHeight="30.0" prefWidth="184.0" style="-fx-background-color: #009aae; -fx-background-radius: 20;" text="Masuk sebagai Calon Pendonor" textFill="WHITE">
+      <Button layoutX="761.0" layoutY="396.0" mnemonicParsing="false" onAction="#handleButtonLoginAdmin" prefHeight="27.0" prefWidth="95.0" style="-fx-background-color: #009aae; -fx-background-radius: 20;" text="Masuk" textAlignment="CENTER" textFill="WHITE">
          <font>
-            <Font name="Swis721 WGL4 BT Bold" size="11.0" />
+            <Font name="System Bold" size="13.0" />
          </font>
       </Button>
-      <Button layoutX="535.0" layoutY="390.0" mnemonicParsing="false" onAction="#handleButtonLoginAdmin" prefHeight="30.0" prefWidth="184.0" style="-fx-background-color: #009aae; -fx-background-radius: 20;" text="Masuk sebagai Admin" textAlignment="CENTER" textFill="WHITE">
-         <font>
-            <Font name="Swis721 WGL4 BT Bold" size="11.0" />
-         </font>
-      </Button>
-      <JFXButton layoutX="547.0" layoutY="434.0" onAction="#handleButtonSceneRegister" text="Belum punya akun? Registrasi" textFill="#009aae" underline="true">
+      <JFXButton layoutX="731.0" layoutY="431.0" onAction="#handleButtonSceneRegister" text="Belum punya akun? Registrasi" textFill="#009aae" underline="true">
          <font>
             <Font name="Swis721 Lt BT Light" size="11.0" />
          </font>
       </JFXButton>
-      <JFXButton layoutX="661.0" layoutY="303.0" onAction="#handleButtonSceneResetPW" text="Lupa password?" textFill="#009aae">
+      <JFXButton layoutX="845.0" layoutY="364.0" onAction="#handleButtonSceneResetPW" text="Lupa password?" textFill="#009aae">
          <font>
             <Font name="Swis721 Lt BT Light" size="10.0" />
          </font>
       </JFXButton>
-      <PasswordField fx:id="pfPassword" layoutX="501.0" layoutY="255.0" prefHeight="38.0" prefWidth="250.0" promptText="Password" style="-fx-background-color: E3DEDE; -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #959595;" />
-      <CheckBox fx:id="cbPassword" layoutX="515.0" layoutY="304.0" mnemonicParsing="false" onAction="#changeVisibility" prefHeight="18.0" prefWidth="104.0" text="Lihat Password" textFill="#009aae">
+      <PasswordField fx:id="pfPassword" layoutX="685.0" layoutY="316.0" prefHeight="38.0" prefWidth="250.0" style="-fx-background-color: FFFFFF; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: ACCACF;" />
+      <CheckBox fx:id="cbPassword" layoutX="699.0" layoutY="365.0" mnemonicParsing="false" onAction="#changeVisibility" prefHeight="18.0" prefWidth="104.0" text="Lihat Password" textFill="#009aae">
          <font>
             <Font name="Swis721 Lt BT Light" size="10.0" />
          </font>
       </CheckBox>
-      <Separator layoutX="513.0" layoutY="516.0" prefHeight="3.0" prefWidth="227.0" />
+      <Separator layoutX="681.0" layoutY="510.0" prefHeight="3.0" prefWidth="227.0" />
+      <Label layoutX="684.0" layoutY="231.0" text="Username" textFill="#009aae">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="685.0" layoutY="296.0" style="-fx-background-color: FFFFFFF;" text="Password" textFill="#009aae">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

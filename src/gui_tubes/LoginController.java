@@ -40,14 +40,10 @@ public class LoginController implements Initializable {
     @FXML
     private TextField tfPassword;
     
-     @FXML
-    private void handleButtonLoginUser(ActionEvent event) {
-        Alert alert = new Alert(AlertType.INFORMATION);
-            alert.setTitle("Perhatian");
-            alert.setHeaderText("Goldarium saat ini hanya tersedia untuk admin");
-            alert.setContentText("Silahkan pilih ulang");
-            alert.showAndWait();
-    }
+    @FXML
+    private TextField tfReset;
+    
+    
     
     @FXML
     private void handleButtonLoginAdmin(ActionEvent event) throws IOException{
@@ -62,36 +58,46 @@ public class LoginController implements Initializable {
             alert.setHeaderText("Informasi login belum lengkap");
             alert.setContentText("Silahkan lengkapi username dan password");
             alert.showAndWait();
+        }else if(password.length()< 8){
+            Alert alert = new Alert(AlertType.WARNING);
+            alert.setTitle("Perhatian");
+            alert.setHeaderText("Digit password Anda kurang dari 8");
+            alert.setContentText("Silahkan lengkapi terlebih dahulu");
+            alert.showAndWait();
         }else{
+            System.out.println("Berhasil masuk");
             Parent scene2 = FXMLLoader.load(getClass().getResource("Multiscene.fxml"));
-        
-        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        
-        Scene scene = new Scene(scene2);
-        
-        stage.setScene(scene);
-        stage.setTitle("Kelola Data Calon Pendonor");
-        stage.show();
-        System.out.println("Berhasil Masuk");
+
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+            Scene scene = new Scene(scene2);
+            stage.setResizable(false);
+            stage.setScene(scene);
+            
+            stage.setTitle("Beranda");
+            stage.show();
+            System.out.println("Berhasil Masuk");
         }
     }
     
     @FXML
     private void handleButtonSceneRegister(ActionEvent event) throws IOException{
-        Parent scene2 = FXMLLoader.load(getClass().getResource("PilihanRegistrasi.fxml"));
+        Parent scene2 = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
         
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         
         Scene scene = new Scene(scene2);
         
         stage.setScene(scene);
-        stage.setTitle("Pilihan registrasi");
+        stage.setResizable(false);
+        stage.setTitle("Halaman registrasi");
         stage.show();
         System.out.println("Berhasil klik register");
     }
     
     @FXML
     private void handleButtonSceneResetPW(ActionEvent event) throws IOException{
+        
         Parent scene2 = FXMLLoader.load(getClass().getResource("ResetPassword.fxml"));
         
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -99,14 +105,15 @@ public class LoginController implements Initializable {
         Scene scene = new Scene(scene2);
         
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.setTitle("Reset Password");
         stage.show();
         System.out.println("Berhasil klik reset password");
     }
     
     @FXML
-    void changeVisibility(ActionEvent event){
-        if(cbPassword.isSelected()){
+    void changeVisibility(ActionEvent event) {
+        if (cbPassword.isSelected()) {
             tfPassword.setText(pfPassword.getText());
             tfPassword.setVisible(true);
             pfPassword.setVisible(false);
@@ -116,7 +123,7 @@ public class LoginController implements Initializable {
         pfPassword.setVisible(true);
         tfPassword.setVisible(false);
     }
-    
+
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {

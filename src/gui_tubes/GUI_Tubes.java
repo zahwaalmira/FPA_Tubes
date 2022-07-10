@@ -18,9 +18,10 @@ public class GUI_Tubes extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("LandingPage.fxml"));
         
         Scene scene = new Scene(root);
+        stage.setResizable(false);
         
         stage.setScene(scene);
         stage.show();

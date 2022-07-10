@@ -55,10 +55,10 @@ public class Data {
         return notelp.get();
     }
 
-//    @Override
-//    public String toString() {
-//        return "Data{" + "username=" + username + ", domisili=" + domisili + ", goldar=" + goldar + ", notelp=" + notelp + '}';
-//    }
+    @Override
+    public String toString() {
+        return "Data{" + "username=" + username + ", domisili=" + domisili + ", goldar=" + goldar + ", notelp=" + notelp + '}';
+    }
 
     public void setNotelp(String notelp) {
         this.notelp.set(notelp);

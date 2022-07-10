@@ -34,7 +34,7 @@ public class ResetPasswordController implements Initializable {
      @FXML
     private void handleButtonKirimTautan(ActionEvent event)throws IOException {
          if (tfEmail.getText().isEmpty()) {
-             Alert alert = new Alert(Alert.AlertType.INFORMATION);
+             Alert alert = new Alert(Alert.AlertType.WARNING);
              alert.setTitle("Perhatian");
              alert.setHeaderText("Anda belum mengisi alamat email");
              alert.setContentText("Silahkan isi terlebih dahulu");
@@ -46,8 +46,9 @@ public class ResetPasswordController implements Initializable {
              Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
              Scene scene = new Scene(scene2);
-
+             stage.setResizable(false);
              stage.setScene(scene);
+             
              stage.setTitle("Login");
              stage.show();
              System.out.println("Berhasil klik kirim tautan");

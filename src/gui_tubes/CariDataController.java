@@ -23,8 +23,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
  */
 public class CariDataController implements Initializable {
     
-     DataList data;
-    
     @FXML
     private TableView<Data> tvData;
     
@@ -59,15 +57,20 @@ public class CariDataController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        TableViewController table =  new TableViewController();
+        table.openTabel();
         tcUsername.setCellValueFactory(new PropertyValueFactory<>("username"));
         tcDomisili.setCellValueFactory(new PropertyValueFactory<>("domisili"));
         tcGoldar.setCellValueFactory(new PropertyValueFactory<>("goldar"));
         tcNoTelp.setCellValueFactory(new PropertyValueFactory<>("notelp"));
         
-        data = new DataList();
-        data.setDummy();
+        for (int i = 0; i < table.dataPengguna.size(); i++) {
+            table.pengguna.add(table.dataPengguna.get(i));
+        }
+
+        tvData.setItems(table.pengguna);
         
-        FilteredList<Data> filteredData = new FilteredList<>(data.getData(), b -> true);
+        FilteredList<Data> filteredData = new FilteredList<>(tvData.getItems(), b -> true);
         tfPencarian.textProperty().addListener((observable, oldValue, newValue) -> {
             filteredData.setPredicate(pengguna -> {
                 if (newValue == null || newValue.isEmpty()) {
@@ -88,8 +91,6 @@ public class CariDataController implements Initializable {
         SortedList<Data> sortedData = new SortedList<>(filteredData);
         sortedData.comparatorProperty().bind(tvData.comparatorProperty());
         
-//        data = new DataList();
-//        data.setDummy();
         tvData.setItems(sortedData);
         
        

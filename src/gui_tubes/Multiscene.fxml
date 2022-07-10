@@ -2,173 +2,160 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Separator?>
-<?import javafx.scene.control.TextArea?>
-<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #ACCACF;" stylesheets="@tampilan.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui_tubes.MultisceneController">
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #eef4f5;" stylesheets="@tampilan.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui_tubes.MultisceneController">
    <children>
-      <BorderPane fx:id="mainPane" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #ACCACF;" stylesheets="@tampilan.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <BorderPane fx:id="mainPane" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #eef4f5;" stylesheets="@tampilan.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <left>
-            <VBox prefHeight="600.0" prefWidth="220.0" style="-fx-background-color: #009aae;" stylesheets="@tampilan.css" BorderPane.alignment="CENTER">
+            <VBox prefHeight="600.0" prefWidth="218.0" style="-fx-background-color: WHITE;" stylesheets="@tampilan.css" BorderPane.alignment="CENTER">
                <children>
-                  <JFXButton buttonType="RAISED" contentDisplay="TOP" onAction="#handleButtonAkun" prefHeight="82.0" prefWidth="220.0" text="GOLDARIUM ADMIN" textFill="WHITE">
-                     <graphic>
-                        <ImageView fitHeight="50.0" fitWidth="50.0" onDragDetected="#handleButtonAkun" pickOnBounds="true" preserveRatio="true">
+                  <HBox prefHeight="69.0" prefWidth="187.0">
+                     <children>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../img/user.png" />
+                              <Image url="@../img/blood-drop.png" />
                            </image>
+                           <HBox.margin>
+                              <Insets left="25.0" top="15.0" />
+                           </HBox.margin>
                         </ImageView>
-                     </graphic>
-                     <font>
-                        <Font size="14.0" />
-                     </font>
+                        <Text fill="#009aae" strokeType="OUTSIDE" strokeWidth="0.0" text="G">
+                           <HBox.margin>
+                              <Insets left="5.0" top="17.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Swis721 BT Bold" size="36.0" />
+                           </font>
+                        </Text>
+                        <Text fill="#009aae" layoutX="70.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="oldarium" wrappingWidth="88.388671875">
+                           <font>
+                              <Font name="Swis721 Hv BT Heavy" size="20.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets top="29.0" />
+                           </HBox.margin>
+                        </Text>
+                     </children>
                      <VBox.margin>
                         <Insets top="10.0" />
                      </VBox.margin>
-                  </JFXButton>
-                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="PMI">
+                  </HBox>
+                  <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#handleButtonHalamanDaftarPengguna" prefHeight="35.0" prefWidth="184.0" ripplerFill="#009aae" text="Data Calon Pendonor" textFill="#828282">
                      <VBox.margin>
-                        <Insets left="100.0" />
+                        <Insets left="20.0" top="30.0" />
                      </VBox.margin>
-                     <effect>
-                        <DropShadow height="19.85" offsetY="3.0" radius="10.2975" width="23.34">
-                           <color>
-                              <Color red="0.27368420362472534" green="0.2493567317724228" blue="0.2493567317724228" />
-                           </color>
-                        </DropShadow>
-                     </effect>
-                  </Text>
-                  <Separator prefWidth="200.0">
-                     <VBox.margin>
-                        <Insets top="30.0" />
-                     </VBox.margin>
-                  </Separator>
-                  <JFXButton alignment="BASELINE_LEFT" graphicTextGap="15.0" onAction="#handleButtonHalamanDaftarPengguna" prefHeight="53.0" prefWidth="220.0" text="Data Calon Pendonor" textFill="WHITE">
-                     <VBox.margin>
-                        <Insets top="15.0" />
-                     </VBox.margin>
-                     <font>
-                        <Font size="14.0" />
-                     </font>
                      <graphic>
-                        <ImageView fitHeight="35.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../img/team.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </JFXButton>
-                  <JFXButton alignment="BASELINE_LEFT" graphicTextGap="15.0" onAction="#handleButtonHalamanStatistik" prefHeight="53.0" prefWidth="220.0" text="Statistik" textFill="WHITE">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                     <graphic>
-                        <ImageView fitHeight="35.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../img/bar-chart.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                     <VBox.margin>
-                        <Insets />
-                     </VBox.margin>
-                  </JFXButton>
-                  <JFXButton alignment="BASELINE_LEFT" graphicTextGap="15.0" onAction="#handleButtonHalamanKelolaData" prefHeight="53.0" prefWidth="220.0" text="Kelola Data" textFill="WHITE">
-                     <graphic>
-                        <ImageView fitHeight="35.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../img/content.png" />
+                              <Image url="@../img/group%20(2).png" />
                            </image>
                         </ImageView>
                      </graphic>
                      <font>
-                        <Font size="14.0" />
+                        <Font name="Arial Rounded MT Bold" size="13.0" />
                      </font>
-                     <VBox.margin>
-                        <Insets />
-                     </VBox.margin>
                   </JFXButton>
-                  <JFXButton alignment="BASELINE_LEFT" graphicTextGap="15.0" onAction="#handleButtonHalamanCariData" prefHeight="53.0" prefWidth="220.0" text="Cari Data" textFill="WHITE">
+                  <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#handleButtonHalamanStatistik" prefHeight="35.0" prefWidth="141.0" ripplerFill="#009aae" text="Statistik" textFill="#828282">
                      <graphic>
-                        <ImageView fitHeight="35.0" fitWidth="38.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../img/magnifying-glass.png" />
+                              <Image url="@../img/bar-chart%20(1).png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <VBox.margin>
+                        <Insets left="20.0" top="15.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#handleButtonHalamanKelolaData" prefHeight="35.0" prefWidth="141.0" ripplerFill="#009aae" text="Kelola Data" textFill="#828282">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/contract.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <VBox.margin>
+                        <Insets left="20.0" top="15.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#handleButtonHalamanCariData" prefHeight="35.0" prefWidth="141.0" ripplerFill="#009aae" text="Cari Data" textFill="#828282">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/search%20(7).png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <VBox.margin>
+                        <Insets left="20.0" top="15.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#handleButtonHalamanKonfirmasi" prefHeight="35.0" prefWidth="182.0" ripplerFill="#009aae" text="Konfirmasi Permintaan" textFill="#828282">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/check-list.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <VBox.margin>
+                        <Insets left="20.0" top="15.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#handleButtonBeranda" prefHeight="35.0" prefWidth="141.0" ripplerFill="#009cad" text="Beranda" textFill="#828282">
+                     <VBox.margin>
+                        <Insets left="20.0" top="15.0" />
+                     </VBox.margin>
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/home%20(3).png" />
                            </image>
                         </ImageView>
                      </graphic>
                      <font>
-                        <Font size="14.0" />
+                        <Font name="Arial Rounded MT Bold" size="12.0" />
                      </font>
-                     <VBox.margin>
-                        <Insets />
-                     </VBox.margin>
                   </JFXButton>
-                  <JFXButton alignment="BASELINE_LEFT" graphicTextGap="15.0" onAction="#handleButtonHalamanKonfirmasi" prefHeight="53.0" prefWidth="220.0" text="Konfirmasi Permintaan" textFill="WHITE">
+                  <JFXButton alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#handleButtonHalamanLogOut" prefHeight="35.0" prefWidth="95.0" ripplerFill="#009cad" text="Keluar" textFill="#828282">
                      <graphic>
-                        <ImageView fitHeight="38.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../img/gear.png" />
+                              <Image url="@../img/sign-out.png" />
                            </image>
                         </ImageView>
                      </graphic>
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </JFXButton>
-                  <Separator prefWidth="200.0">
                      <VBox.margin>
-                        <Insets top="20.0" />
+                        <Insets left="60.0" top="130.0" />
                      </VBox.margin>
-                  </Separator>
-                  <JFXButton alignment="BASELINE_LEFT" graphicTextGap="15.0" onAction="#handleButtonBeranda" prefHeight="53.0" prefWidth="220.0" text="Beranda" textFill="WHITE">
-                     <VBox.margin>
-                        <Insets top="15.0" />
-                     </VBox.margin>
-                     <graphic>
-                        <ImageView fitHeight="38.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../img/home.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
                      <font>
-                        <Font size="14.0" />
+                        <Font name="Arial Rounded MT Bold" size="12.0" />
                      </font>
-                  </JFXButton>
-                  <JFXButton alignment="BASELINE_LEFT" graphicTextGap="15.0" onAction="#handleButtonHalamanLogOut" prefHeight="53.0" prefWidth="220.0" text="Keluar" textFill="WHITE">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                     <graphic>
-                        <ImageView fitHeight="38.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../img/exit.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
                   </JFXButton>
                </children>
             </VBox>
          </left>
-         <center>
-            <TextArea prefHeight="575.0" prefWidth="580.0" style="-fx-background-color: #ACCACF;" stylesheets="@tampilan.css" text="Selamat Datang di Goldarium" BorderPane.alignment="CENTER">
-               <font>
-                  <Font name="Swis721 Hv BT Heavy" size="36.0" />
-               </font>
-               <BorderPane.margin>
-                  <Insets />
-               </BorderPane.margin>
-            </TextArea>
-         </center>
       </BorderPane>
    </children>
 </AnchorPane>

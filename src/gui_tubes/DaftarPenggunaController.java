@@ -39,14 +39,19 @@ public class DaftarPenggunaController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        TableViewController table =  new TableViewController();
+        table.openTabel();
         tcUsername.setCellValueFactory(new PropertyValueFactory<>("username"));
         tcDomisili.setCellValueFactory(new PropertyValueFactory<>("domisili"));
         tcGoldar.setCellValueFactory(new PropertyValueFactory<>("goldar"));
         tcNoTelp.setCellValueFactory(new PropertyValueFactory<>("notelp"));
         
+        for (int i = 0; i < table.dataPengguna.size(); i++) {
+            table.pengguna.add(table.dataPengguna.get(i));
+        }
         data = new DataList();
-        data.setDummy();
-        tvData.setItems(data.getData());
+                tvData.setItems(table.pengguna);
+        
     }    
     
 }
