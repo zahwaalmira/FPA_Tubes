@@ -82,17 +82,11 @@ public class LoginController implements Initializable {
     
     @FXML
     private void handleButtonSceneRegister(ActionEvent event) throws IOException{
-        Parent scene2 = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
-        
-        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        
-        Scene scene = new Scene(scene2);
-        
-        stage.setScene(scene);
-        stage.setResizable(false);
-        stage.setTitle("Halaman registrasi");
-        stage.show();
-        System.out.println("Berhasil klik register");
+        Alert alert = new Alert(AlertType.INFORMATION);
+            alert.setTitle("Informasi");
+            alert.setHeaderText("Saat ini Goldarium hanya tersedia versi admin");
+            alert.setContentText("Jika Anda Admin, silahkan masuk melalui form login");
+            alert.showAndWait();
     }
     
     @FXML

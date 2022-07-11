@@ -24,7 +24,7 @@
             <Font name="Swis721 Hv BT Heavy" size="14.0" />
          </font>
       </JFXButton>
-      <JFXButton layoutX="848.0" layoutY="58.0" text="HUBUNGI KAMI" textFill="#009aae">
+      <JFXButton layoutX="848.0" layoutY="58.0" onAction="#handleButtonContactUs" text="HUBUNGI KAMI" textFill="#009aae">
          <font>
             <Font name="Swis721 Hv BT Heavy" size="14.0" />
          </font>

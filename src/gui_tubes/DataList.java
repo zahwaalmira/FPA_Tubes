@@ -37,36 +37,6 @@ public class DataList {
         listData.add(new Data(username, domisili, goldar, notelp));
     }
 
-    public void setDummy() {
-        listData.add(new Data("zahwaalmira", "Bekasi", "AB+", "081234445678"));
-        listData.add(new Data("alfatihberlian", "Jogja", "O-", "081823982349"));
-        listData.add(new Data("andikaraka", "Solo", "B+", "081232344123"));
-        listData.add(new Data("raflimuhammad", "Sampit", "A+", "081234434789"));
-        listData.add(new Data("syifaaliya", "Bali", "AB-", "081232345987"));
-        listData.add(new Data("marettaendah", "Kudus", "O+", "081276545544"));
-        listData.add(new Data("javierjinan", "Aceh", "A-", "0812323443322"));
-        listData.add(new Data("gunturmaulana", "Cilacap", "B-", "081234447766"));
-        listData.add(new Data("harrismahendra", "Medan", "AB+", "081235668899"));
-        listData.add(new Data("fahnimaharani", "Lombok", "A+", "081237776677"));
-        listData.add(new Data("latifmuhammad", "Klaten", "B+", "081236664455"));
-        listData.add(new Data("dzikrimuhammad", "Bekasi", "A-", "081237779231"));
-        listData.add(new Data("jamaludinhaikal", "Surabaya", "O+", "08123999112"));
-        listData.add(new Data("fadhilahcitra", "Cilacap", "AB-", "081245557890"));
-        listData.add(new Data("aisyaputri", "Sulawesi", "B-", "081233333456"));
-        listData.add(new Data("wildanmuhammad", "Jogja", "O+", "081232222789"));
-        listData.add(new Data("patandyawisnu", "Semarang", "B+", "081232223456"));
-        listData.add(new Data("rasyidahmad", "Jakarta", "A+", "081234448866"));
-    }
-    
-     public void dataTable(){
-         
-        TableViewController table =  new TableViewController();
-        table.openTabel();
-        for (int i = 0; i < table.dataPengguna.size(); i++) {
-            table.pengguna.add(table.dataPengguna.get(i));
-        }
-        DataList data = new DataList();
-    }
 
     public void dataChart() {
 //            ArrayList<Data> dataPengguna = new ArrayList<>();
@@ -163,25 +133,10 @@ public class DataList {
     public void setTotalOMIN(int totalOMIN) {
         this.totalOMIN = totalOMIN;
     }
-    
-//    public void dataTable(){
-//        TableViewController table =  new TableViewController();
-//        table.openTabel();
-//        for (int i = 0; i < table.dataPengguna.size(); i++) {
-//            table.pengguna.add(table.dataPengguna.get(i));
-//        }
-//        DataList data = new DataList();
-//    }
 
     @Override
     public String toString() {
         return "DataList{" + "totalAPLUS=" + totalAPLUS + ", totalBPLUS=" + totalBPLUS + ", totalABPLUS=" + totalABPLUS + ", totalOPLUS=" + totalOPLUS + ", totalAMIN=" + totalAMIN + ", totalBMIN=" + totalBMIN + ", totalABMIN=" + totalABMIN + ", totalOMIN=" + totalOMIN + '}';
     }
     
-    public void showData(){
-        for (int i =0; i<1; i++){
-            System.out.println(listData.toString());
-        }
-    }
-
 }

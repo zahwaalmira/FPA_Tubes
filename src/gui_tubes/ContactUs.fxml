@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1009.0" style="-fx-background-color: #eef4f5;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui_tubes.ContactUsController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#009aae" height="93.0" layoutX="-342.0" layoutY="262.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1352.0" />
+      <ImageView fitHeight="135.0" fitWidth="155.0" layoutX="92.0" layoutY="237.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/IMG_20220710_195314.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="135.0" fitWidth="155.0" layoutX="326.0" layoutY="237.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/WhatsApp%20Image%202022-07-10%20at%207.39.20%20PM.jpeg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="135.0" fitWidth="155.0" layoutX="558.0" layoutY="237.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/WhatsApp%20Image%202022-07-10%20at%207.45.14%20PM.jpeg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="135.0" fitWidth="155.0" layoutX="777.0" layoutY="237.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/WhatsApp%20Image%202022-07-10%20at%207.54.02%20PM.jpeg" />
+         </image>
+      </ImageView>
+      <Text fill="#009aae" layoutX="92.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Meet Goldarium's Developer Team, Ortogonal!" wrappingWidth="764.5996398925781">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Text>
+      <Separator layoutX="87.0" layoutY="191.0" prefHeight="0.0" prefWidth="838.0" />
+      <Text layoutX="92.0" layoutY="400.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zahwa Almira Kayla" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="84.0" layoutY="421.0" strokeType="OUTSIDE" strokeWidth="0.0" text="21523224@students.uii.ac.id" textAlignment="CENTER" />
+      <Text layoutX="314.0" layoutY="400.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Andika Raka Wicaksono">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="318.0" layoutY="422.0" strokeType="OUTSIDE" strokeWidth="0.0" text="215232146@students.uii.ac.id" />
+      <Text layoutX="549.0" layoutY="399.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Al-Fatih Berlian Palsa">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="548.0" layoutY="422.0" strokeType="OUTSIDE" strokeWidth="0.0" text="21523095@students.uii.ac.id" />
+      <Text layoutX="777.0" layoutY="399.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Muhamad Rafli Fauzi">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="773.0" layoutY="423.0" strokeType="OUTSIDE" strokeWidth="0.0" text="21523042@students.uii.ac.id" />
+      <Button layoutX="92.0" layoutY="512.0" mnemonicParsing="false" onAction="#handleButtonKembali" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: WHITE; -fx-background-radius: 20; -fx-border-color: #009aae; -fx-border-radius: 20; -fx-border-width: 2;" text="Kembali" textFill="#009aae">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

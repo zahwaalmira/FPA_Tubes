@@ -54,23 +54,6 @@
                </font>
             </Text>
          </children></Pane>
-      <Pane layoutX="388.0" layoutY="239.0" prefHeight="182.0" prefWidth="362.0" style="-fx-background-radius: 10; -fx-background-color: #c6d2f1;" stylesheets="@tampilan.css">
-         <children>
-            <BarChart fx:id="bcStok" layoutX="-4.0" layoutY="7.0" prefHeight="178.0" prefWidth="362.0">
-              <xAxis>
-                <CategoryAxis side="BOTTOM" />
-              </xAxis>
-              <yAxis>
-                <NumberAxis side="LEFT" />
-              </yAxis>
-            </BarChart>
-            <Label layoutX="125.0" layoutY="7.0" text="Jumlah Stok Darah PMI">
-               <font>
-                  <Font name="Arial Rounded MT Bold" size="12.0" />
-               </font>
-            </Label>
-         </children>
-      </Pane>
       <Pane layoutX="47.0" layoutY="239.0" prefHeight="336.0" prefWidth="324.0" style="-fx-background-color: #C4E6B8; -fx-background-radius: 10;">
          <children>
             <TableView layoutX="12.0" layoutY="47.0" prefHeight="267.0" prefWidth="302.0">
@@ -111,5 +94,18 @@
          </children>
       </Pane>
       <Separator layoutX="59.0" layoutY="30.0" prefHeight="15.0" prefWidth="622.0" />
+      <BarChart fx:id="bcStok" layoutX="368.0" layoutY="253.0" prefHeight="184.0" prefWidth="395.0">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </BarChart>
+      <Label layoutX="498.0" layoutY="245.0" text="Jumlah Stok Darah PMI">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="12.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

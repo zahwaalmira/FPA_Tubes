@@ -35,8 +35,6 @@ import javafx.scene.control.cell.TextFieldTableCell;
  */
 public class TableViewController implements Initializable {
     XStream xstream = new XStream(new StaxDriver());
-
-    DataList data;
    
     ArrayList<Data> dataPengguna = new ArrayList<>();
     ObservableList pengguna = observableArrayList();
@@ -151,13 +149,12 @@ public class TableViewController implements Initializable {
     
     @FXML
     public void handleButtonHapus(ActionEvent event) {
-        openTabel();
         TableView.TableViewSelectionModel selectionModel = tvData.getSelectionModel();
         selectionModel.setSelectionMode(SelectionMode.SINGLE);
         if (selectionModel.isEmpty()) {
             alert.setTitle("Perhatian");
             alert.setHeaderText("Anda belum memilih data yang ingin dihapus");
-            alert.setContentText("Silahkan periksa kembali");
+            alert.setContentText("Silahkan pilih terlebih dahulu");
             alert.showAndWait();
 
         } else {
@@ -186,7 +183,6 @@ public class TableViewController implements Initializable {
             public void handle(CellEditEvent<Data, String> event){
                 Data data = event.getRowValue();
                 data.setUsername(event.getNewValue());
-//                dataPengguna.add(data);
                 SaveAndCreate();
             }
                 
@@ -198,7 +194,6 @@ public class TableViewController implements Initializable {
             public void handle(CellEditEvent<Data, String> event){
                 Data data = event.getRowValue();
                 data.setDomisili(event.getNewValue());
-//                dataPengguna.add(data);
                 SaveAndCreate();
             }
                 
@@ -210,7 +205,6 @@ public class TableViewController implements Initializable {
             public void handle(CellEditEvent<Data, String> event){
                 Data data = event.getRowValue();
                 data.setGoldar(event.getNewValue());
-//                dataPengguna.add(data);
                 SaveAndCreate();
             }
                 
@@ -222,7 +216,6 @@ public class TableViewController implements Initializable {
             public void handle(CellEditEvent<Data, String> event){
                 Data data = event.getRowValue();
                 data.setNotelp(event.getNewValue());
-//                dataPengguna.add(data);
                 SaveAndCreate();
             }
                 
@@ -244,8 +237,8 @@ public class TableViewController implements Initializable {
         // TODO
         openTabel();
         cbGoldar.setValue("Golongan Darah");
-        cbGoldar.getItems().addAll("A+","B+","O+","AB+","A-", "B-", "O-", "AB-");
-       
+        cbGoldar.getItems().addAll("A+", "B+", "O+", "AB+", "A-", "B-", "O-", "AB-");
+
         tcUsername.setCellValueFactory(new PropertyValueFactory<>("username"));
         tcDomisili.setCellValueFactory(new PropertyValueFactory<>("domisili"));
         tcGoldar.setCellValueFactory(new PropertyValueFactory<>("goldar"));
@@ -255,13 +248,14 @@ public class TableViewController implements Initializable {
             pengguna.add(dataPengguna.get(i));
 
         }
-        
+
         tvData.setItems(pengguna);
 
-        
         SaveAndCreate();
-    }  
-    
+        
+
     }
+
+}
 
 

@@ -21,40 +21,25 @@ import javafx.stage.Stage;
  *
  * @author zahwa
  */
-public class LandingPageController implements Initializable {
-    @FXML
-    private void handleButtonLandingPage(ActionEvent event) throws IOException{
-        Parent scene2 = FXMLLoader.load(getClass().getResource("Login.fxml"));
-        
-        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        
-        Scene scene = new Scene(scene2);
-        
-        stage.setScene(scene);
-        stage.setResizable(false);
-        stage.setTitle("Login");
-        stage.show();
-        System.out.println("Berhasil klik mulai sekarang");
-    }
-    
-    @FXML
-    private void handleButtonContactUs(ActionEvent event) throws IOException{
-        Parent scene2 = FXMLLoader.load(getClass().getResource("ContactUs.fxml"));
-        
-        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        
-        Scene scene = new Scene(scene2);
-        
-        stage.setScene(scene);
-        stage.setResizable(false);
-        stage.setTitle("Hubungi kami");
-        stage.show();
-        System.out.println("Berhasil klik hubungi kami");
-    }
-    
+public class ContactUsController implements Initializable {
+
     /**
      * Initializes the controller class.
      */
+    @FXML
+    private void handleButtonKembali(ActionEvent event) throws IOException{
+        Parent scene2 = FXMLLoader.load(getClass().getResource("LandingPage.fxml"));
+        
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        
+        Scene scene = new Scene(scene2);
+        
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.setTitle("Landing Page");
+        stage.show();
+        System.out.println("Berhasil klik kembali");
+    }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
