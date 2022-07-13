@@ -57,7 +57,7 @@
       <Separator layoutX="463.0" layoutY="172.0" prefHeight="3.0" prefWidth="310.0" />
       <Label layoutX="32.0" layoutY="52.0" prefHeight="35.0" prefWidth="110.0" text="Cari Data" textFill="#009dab">
          <font>
-            <Font name="Arial Rounded MT Bold" size="24.0" />
+            <Font name="SansSerif Bold" size="24.0" />
          </font>
       </Label>
    </children>

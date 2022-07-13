@@ -48,4 +48,20 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
  
 }
 
+table-view{
+    -fx-background-radius: 25px;
+}
+
+.table-view .column-header-background{
+    -fx-background-color:  #ACCACF;
+    -fx-background-radius: 0px 0px 0px 0px;
+}
+ 
+.table-view .column-header, .table-view.filler{
+    -fx-background-color:  transparent;
+    -fx-size: 30;
+}
+
+
+
 

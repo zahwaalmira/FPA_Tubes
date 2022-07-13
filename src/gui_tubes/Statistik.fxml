@@ -4,36 +4,43 @@
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #eef4f5;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui_tubes.StatistikController">
    <children>
-      <Pane layoutX="25.0" layoutY="65.0" prefHeight="511.0" prefWidth="747.0" style="-fx-background-color: WHITE; -fx-background-radius: 20;">
-         <children>
-            <Label layoutX="307.0" layoutY="32.0" text="Statistik" textFill="#009aae">
-               <font>
-                  <Font name="System Bold" size="24.0" />
-               </font>
-            </Label>
-            <BarChart fx:id="bcGoldar" layoutX="35.0" layoutY="82.0" prefHeight="404.0" prefWidth="691.0" title="Jumla Pendonor Darah Sukarela Berdasarkan Golongan Darah">
-              <xAxis>
-                <CategoryAxis side="BOTTOM" />
-              </xAxis>
-              <yAxis>
-                <NumberAxis side="LEFT" />
-              </yAxis>
-            </BarChart>
-         </children>
+      <Pane layoutX="20.0" layoutY="77.0" opacity="0.39" prefHeight="458.0" prefWidth="759.0" style="-fx-background-color: C6E4E8; -fx-background-radius: 20;">
          <effect>
-            <DropShadow offsetX="0.5" offsetY="0.5">
+            <InnerShadow>
                <color>
-                  <Color red="0.45625731348991394" green="0.49473685026168823" blue="0.48960623145103455" />
+                  <Color red="0.0784313753247261" green="0.30980393290519714" blue="0.33725491166114807" />
                </color>
-            </DropShadow>
+            </InnerShadow>
          </effect></Pane>
+      <Label layoutX="331.0" layoutY="23.0" prefHeight="43.0" prefWidth="123.0" text="Statistik" textFill="#009aae">
+         <font>
+            <Font name="SansSerif Bold" size="30.0" />
+         </font>
+      </Label>
+      <Separator layoutX="35.0" layoutY="45.0" prefHeight="4.0" prefWidth="288.0" />
+      <Separator layoutX="456.0" layoutY="47.0" prefHeight="4.0" prefWidth="310.0" />
+      <BarChart fx:id="bcGoldar" layoutX="44.0" layoutY="111.0" prefHeight="404.0" prefWidth="691.0" title="Jumlah Pendonor Sukarela yang Terdaftar Berdasarkan Golongan Darah">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </BarChart>
+      <Text layoutX="33.0" layoutY="572.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*Dapat berubah sewaktu-waktu">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

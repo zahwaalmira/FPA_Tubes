@@ -28,12 +28,12 @@
             <TableColumn fx:id="tcNoTelp" prefWidth="200.800048828125" text="Nomor Telfon" />
          </columns>
       </TableView>
-      <Label layoutX="254.0" layoutY="28.0" text="Data Calon Pendonor" textFill="#009aae">
+      <Label layoutX="264.0" layoutY="26.0" text="Data Calon Pendonor" textFill="#009aae">
          <font>
-            <Font name="Arial Rounded MT Bold" size="24.0" />
+            <Font name="SansSerif Bold" size="24.0" />
          </font>
       </Label>
-      <Separator layoutX="505.0" layoutY="43.0" prefHeight="3.0" prefWidth="249.0" />
-      <Separator layoutX="30.0" layoutY="44.0" prefHeight="3.0" prefWidth="211.0" />
+      <Separator layoutX="517.0" layoutY="40.0" prefHeight="3.0" prefWidth="238.0" />
+      <Separator layoutX="30.0" layoutY="38.0" prefHeight="3.0" prefWidth="224.0" />
    </children>
 </AnchorPane>

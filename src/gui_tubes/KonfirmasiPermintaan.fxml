@@ -14,7 +14,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #eef4f5;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui_tubes.KonfirmasiPermintaanController">
    <children>
-      <Pane layoutX="27.0" layoutY="70.0" opacity="0.39" prefHeight="502.0" prefWidth="755.0" style="-fx-background-color: C6E4E8; -fx-background-radius: 20;">
+      <Pane layoutX="27.0" layoutY="70.0" opacity="0.39" prefHeight="521.0" prefWidth="750.0" style="-fx-background-color: C6E4E8; -fx-background-radius: 20;">
          <effect>
             <InnerShadow>
                <color>
@@ -24,13 +24,12 @@
          </effect></Pane>
       <Label layoutX="266.0" layoutY="24.0" text="Konfirmasi Permintaan" textFill="#009aae">
          <font>
-            <Font name="Arial Rounded MT Bold" size="24.0" />
+            <Font name="SansSerif Bold" size="24.0" />
          </font>
       </Label>
       <Separator layoutX="533.0" layoutY="39.0" prefHeight="3.0" prefWidth="230.0" />
       <Separator layoutX="47.0" layoutY="38.0" prefHeight="3.0" prefWidth="217.0" />
-      <Text layoutX="42.0" layoutY="274.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nama: Muhamad Rafli Fauzi" wrappingWidth="190.72344970703125" />
-      <Pane layoutX="42.0" layoutY="98.0" prefHeight="186.0" prefWidth="226.0" style="-fx-background-color: WHITE; -fx-background-radius: 15;">
+      <Pane layoutX="42.0" layoutY="79.0" prefHeight="202.0" prefWidth="226.0" style="-fx-background-color: WHITE; -fx-background-radius: 15;">
          <children>
             <Pane layoutX="11.0" layoutY="37.0" prefHeight="28.0" prefWidth="204.0" style="-fx-background-color: ea8B8B; -fx-background-radius: 5;">
                <children>
@@ -62,7 +61,7 @@
             </Pane>
             <Text layoutX="12.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nama: Muhamad Rafli Fauzi" wrappingWidth="190.72344970703125" />
             <Text layoutX="12.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Golongan Darah: B+" wrappingWidth="190.72344970703125" />
-            <Text layoutX="12.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Terdaftar: 03-04-2014" wrappingWidth="190.72344970703125" />
+            <Text layoutX="12.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rumah Sakit: RS SILOAM" wrappingWidth="190.72344970703125" />
             <Text layoutX="56.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Urgensi: Regular" wrappingWidth="102.72343444824219">
                <font>
                   <Font name="System Bold" size="12.0" />
@@ -74,10 +73,10 @@
                   <Image url="@../img/complain.png" />
                </image>
             </ImageView>
+            <Text layoutX="12.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jumlah Pendonor: 3 " wrappingWidth="190.72344970703125" />
          </children>
       </Pane>
-      <Text layoutX="290.0" layoutY="274.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nama: Muhamad Rafli Fauzi" wrappingWidth="190.72344970703125" />
-      <Pane layoutX="290.0" layoutY="98.0" prefHeight="186.0" prefWidth="226.0" style="-fx-background-color: WHITE; -fx-background-radius: 15;">
+      <Pane layoutX="290.0" layoutY="79.0" prefHeight="202.0" prefWidth="226.0" style="-fx-background-color: WHITE; -fx-background-radius: 15;">
          <children>
             <Pane layoutX="11.0" layoutY="37.0" prefHeight="28.0" prefWidth="204.0" style="-fx-background-color: ea8B8B; -fx-background-radius: 5;">
                <children>
@@ -109,7 +108,6 @@
             </Pane>
             <Text layoutX="12.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nama: Andika Rak Wicaksono" wrappingWidth="190.72344970703125" />
             <Text layoutX="12.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Golongan Darah: A-" wrappingWidth="190.72344970703125" />
-            <Text layoutX="12.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Terdaftar: 19-12-2022" wrappingWidth="190.72344970703125" />
             <Text layoutX="59.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Urgensi: Darurat" wrappingWidth="102.72343444824219">
                <font>
                   <Font name="System Bold" size="12.0" />
@@ -121,10 +119,12 @@
                   <Image url="@../img/alert.png" />
                </image>
             </ImageView>
+            <Text layoutX="12.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jumlah Pendonor: 1 " wrappingWidth="190.72344970703125" />
+            <Text layoutX="12.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rumah Sakit: RS Sardjito" wrappingWidth="190.72344970703125" />
          </children>
       </Pane>
       <Text layoutX="42.0" layoutY="513.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nama: Muhamad Rafli Fauzi" wrappingWidth="190.72344970703125" />
-      <Pane layoutX="42.0" layoutY="337.0" prefHeight="186.0" prefWidth="226.0" style="-fx-background-color: WHITE; -fx-background-radius: 15;">
+      <Pane layoutX="42.0" layoutY="337.0" prefHeight="202.0" prefWidth="226.0" style="-fx-background-color: WHITE; -fx-background-radius: 15;">
          <children>
             <Pane layoutX="11.0" layoutY="37.0" prefHeight="28.0" prefWidth="204.0" style="-fx-background-color: ea8B8B; -fx-background-radius: 5;">
                <children>
@@ -156,7 +156,6 @@
             </Pane>
             <Text layoutX="12.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nama: Alfatih Berlian Palsa" wrappingWidth="190.72344970703125" />
             <Text layoutX="12.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Golongan Darah: O+" wrappingWidth="190.72344970703125" />
-            <Text layoutX="12.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Terdaftar: 02-01-2019" wrappingWidth="190.72344970703125" />
             <Text layoutX="56.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Urgensi: Regular" wrappingWidth="102.72343444824219">
                <font>
                   <Font name="System Bold" size="12.0" />
@@ -168,10 +167,12 @@
                   <Image url="@../img/complain.png" />
                </image>
             </ImageView>
+            <Text layoutX="12.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jumlah Pendonor: 1" wrappingWidth="190.72344970703125" />
+            <Text layoutX="12.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rumah Sakit: RS Elizabeth" wrappingWidth="190.72344970703125" />
          </children>
       </Pane>
       <Text layoutX="297.0" layoutY="510.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nama: Muhamad Rafli Fauzi" wrappingWidth="190.72344970703125" />
-      <Pane layoutX="297.0" layoutY="334.0" prefHeight="186.0" prefWidth="226.0" style="-fx-background-color: WHITE; -fx-background-radius: 15;">
+      <Pane layoutX="297.0" layoutY="334.0" prefHeight="202.0" prefWidth="226.0" style="-fx-background-color: WHITE; -fx-background-radius: 15;">
          <children>
             <Pane layoutX="11.0" layoutY="37.0" prefHeight="28.0" prefWidth="204.0" style="-fx-background-color: ea8B8B; -fx-background-radius: 5;">
                <children>
@@ -203,7 +204,6 @@
             </Pane>
             <Text layoutX="12.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nama: Atta Petir" wrappingWidth="190.72344970703125" />
             <Text layoutX="12.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Golongan Darah: B-" wrappingWidth="190.72344970703125" />
-            <Text layoutX="12.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Terdaftar: 02-02-2020" wrappingWidth="190.72344970703125" />
             <Text layoutX="63.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Urgensi: Darurat" wrappingWidth="102.72343444824219">
                <font>
                   <Font name="System Bold" size="12.0" />
@@ -215,10 +215,11 @@
                   <Image url="@../img/alert.png" />
                </image>
             </ImageView>
+            <Text layoutX="12.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jumlah Pendonor: 5" wrappingWidth="190.72344970703125" />
+            <Text layoutX="12.0" layoutY="184.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rumah Sakit: RS Mitra" wrappingWidth="190.72344970703125" />
          </children>
       </Pane>
-      <Text layoutX="540.0" layoutY="274.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nama: Muhamad Rafli Fauzi" wrappingWidth="190.72344970703125" />
-      <Pane layoutX="540.0" layoutY="98.0" prefHeight="186.0" prefWidth="226.0" style="-fx-background-color: WHITE; -fx-background-radius: 15;">
+      <Pane layoutX="540.0" layoutY="78.0" prefHeight="202.0" prefWidth="226.0" style="-fx-background-color: WHITE; -fx-background-radius: 15;">
          <children>
             <Pane layoutX="11.0" layoutY="37.0" prefHeight="28.0" prefWidth="204.0" style="-fx-background-color: ea8B8B; -fx-background-radius: 5;">
                <children>
@@ -248,9 +249,8 @@
                   </ImageView>
                </children>
             </Pane>
-            <Text layoutX="12.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nama: Zahwa Almmira Kayla" wrappingWidth="190.72344970703125" />
+            <Text layoutX="12.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nama: Zahwa Almira Kayla" wrappingWidth="190.72344970703125" />
             <Text layoutX="12.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Golongan Darah: AB+" wrappingWidth="190.72344970703125" />
-            <Text layoutX="12.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Terdaftar: 28-10-2021" wrappingWidth="190.72344970703125" />
             <Text layoutX="55.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Urgensi: Regular" wrappingWidth="102.72343444824219">
                <font>
                   <Font name="System Bold" size="12.0" />
@@ -262,10 +262,12 @@
                   <Image url="@../img/complain.png" />
                </image>
             </ImageView>
+            <Text layoutX="12.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jumlah Pendonor: 2 " wrappingWidth="190.72344970703125" />
+            <Text layoutX="12.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rumah Sakit: RS Mitra Timur " wrappingWidth="190.72344970703125" />
          </children>
       </Pane>
       <Text layoutX="540.0" layoutY="513.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nama: Muhamad Rafli Fauzi" wrappingWidth="190.72344970703125" />
-      <Pane layoutX="540.0" layoutY="337.0" prefHeight="186.0" prefWidth="226.0" style="-fx-background-color: WHITE; -fx-background-radius: 15;">
+      <Pane layoutX="540.0" layoutY="337.0" prefHeight="202.0" prefWidth="226.0" style="-fx-background-color: WHITE; -fx-background-radius: 15;">
          <children>
             <Pane layoutX="11.0" layoutY="37.0" prefHeight="28.0" prefWidth="204.0" style="-fx-background-color: ea8B8B; -fx-background-radius: 5;">
                <children>
@@ -297,7 +299,6 @@
             </Pane>
             <Text layoutX="12.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nama: Kani Riyana Adina" wrappingWidth="190.72344970703125" />
             <Text layoutX="12.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Golongan Darah: A+" wrappingWidth="190.72344970703125" />
-            <Text layoutX="12.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Terdaftar: 11-11-2011" wrappingWidth="190.72344970703125" />
             <Text layoutX="58.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Urgensi: Regular" wrappingWidth="102.72343444824219">
                <font>
                   <Font name="System Bold" size="12.0" />
@@ -309,9 +310,11 @@
                   <Image url="@../img/complain.png" />
                </image>
             </ImageView>
+            <Text layoutX="12.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jumlah Pendonor: 2 " wrappingWidth="190.72344970703125" />
+            <Text layoutX="12.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rumah Sakit: RSUD BANTEN" wrappingWidth="190.72344970703125" />
          </children>
       </Pane>
-      <JFXButton alignment="BASELINE_RIGHT" graphicTextGap="0.0" layoutX="110.0" layoutY="293.0" onAction="#handleButtonBroadcast1" prefHeight="28.0" prefWidth="90.0" style="-fx-background-color: #009aae; -fx-background-radius: 10;" text="Broadcast" textFill="WHITE">
+      <JFXButton fx:id="btn1" alignment="BASELINE_RIGHT" graphicTextGap="0.0" layoutX="110.0" layoutY="293.0" onAction="#handleButtonBroadcast1" prefHeight="28.0" prefWidth="90.0" style="-fx-background-color: #009aae; -fx-background-radius: 10;" text="Broadcast" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
@@ -321,17 +324,17 @@
             <Image url="@../img/megaphone.png" />
          </image>
       </ImageView>
-      <JFXButton alignment="BASELINE_RIGHT" graphicTextGap="0.0" layoutX="358.0" layoutY="293.0" onAction="#handleButtonBroadcast2" prefHeight="28.0" prefWidth="90.0" style="-fx-background-color: #009aae; -fx-background-radius: 10;" text="Broadcast" textFill="WHITE">
+      <JFXButton fx:id="btn2" alignment="BASELINE_RIGHT" graphicTextGap="0.0" layoutX="358.0" layoutY="293.0" onAction="#handleButtonBroadcast2" prefHeight="28.0" prefWidth="90.0" style="-fx-background-color: #009aae; -fx-background-radius: 10;" text="Broadcast" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </JFXButton>
-      <ImageView fitHeight="101.0" fitWidth="17.0" layoutX="368.0" layoutY="299.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="btn2" fitHeight="101.0" fitWidth="17.0" layoutX="368.0" layoutY="299.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/megaphone.png" />
          </image>
       </ImageView>
-      <JFXButton alignment="BASELINE_RIGHT" graphicTextGap="0.0" layoutX="608.0" layoutY="293.0" onAction="#handleButtonBroadcast3" prefHeight="28.0" prefWidth="90.0" style="-fx-background-color: #009aae; -fx-background-radius: 10;" text="Broadcast" textFill="WHITE">
+      <JFXButton fx:id="btn3" alignment="BASELINE_RIGHT" graphicTextGap="0.0" layoutX="608.0" layoutY="293.0" onAction="#handleButtonBroadcast3" prefHeight="28.0" prefWidth="90.0" style="-fx-background-color: #009aae; -fx-background-radius: 10;" text="Broadcast" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
@@ -341,32 +344,32 @@
             <Image url="@../img/megaphone.png" />
          </image>
       </ImageView>
-      <JFXButton alignment="BASELINE_RIGHT" graphicTextGap="0.0" layoutX="616.0" layoutY="530.0" onAction="#handleButtonBroadcast6" prefHeight="28.0" prefWidth="90.0" style="-fx-background-color: #009aae; -fx-background-radius: 10;" text="Broadcast" textFill="WHITE">
+      <JFXButton fx:id="btn6" alignment="BASELINE_RIGHT" graphicTextGap="0.0" layoutX="616.0" layoutY="552.0" onAction="#handleButtonBroadcast6" prefHeight="28.0" prefWidth="90.0" style="-fx-background-color: #009aae; -fx-background-radius: 10;" text="Broadcast" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </JFXButton>
-      <ImageView fitHeight="101.0" fitWidth="17.0" layoutX="625.0" layoutY="536.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="btn6" fitHeight="101.0" fitWidth="17.0" layoutX="625.0" layoutY="558.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/megaphone.png" />
          </image>
       </ImageView>
-      <JFXButton alignment="BASELINE_RIGHT" graphicTextGap="0.0" layoutX="367.0" layoutY="530.0" onAction="#handleButtonBroadcast5" prefHeight="28.0" prefWidth="90.0" style="-fx-background-color: #009aae; -fx-background-radius: 10;" text="Broadcast" textFill="WHITE">
+      <JFXButton fx:id="btn5" alignment="BASELINE_RIGHT" graphicTextGap="0.0" layoutX="367.0" layoutY="551.0" onAction="#handleButtonBroadcast5" prefHeight="28.0" prefWidth="90.0" style="-fx-background-color: #009aae; -fx-background-radius: 10;" text="Broadcast" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </JFXButton>
-      <ImageView fitHeight="101.0" fitWidth="17.0" layoutX="376.0" layoutY="536.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="101.0" fitWidth="17.0" layoutX="376.0" layoutY="557.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/megaphone.png" />
          </image>
       </ImageView>
-      <JFXButton alignment="BASELINE_RIGHT" graphicTextGap="0.0" layoutX="112.0" layoutY="531.0" onAction="#handleButtonBroadcast4" prefHeight="28.0" prefWidth="90.0" style="-fx-background-color: #009aae; -fx-background-radius: 10;" text="Broadcast" textFill="WHITE">
+      <JFXButton fx:id="btn4" alignment="BASELINE_RIGHT" graphicTextGap="0.0" layoutX="111.0" layoutY="549.0" onAction="#handleButtonBroadcast4" prefHeight="28.0" prefWidth="90.0" style="-fx-background-color: #009aae; -fx-background-radius: 10;" text="Broadcast" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </JFXButton>
-      <ImageView fitHeight="101.0" fitWidth="17.0" layoutX="120.0" layoutY="537.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="101.0" fitWidth="17.0" layoutX="120.0" layoutY="555.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/megaphone.png" />
          </image>

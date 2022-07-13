@@ -64,6 +64,7 @@ public class LoginController implements Initializable {
             alert.setHeaderText("Digit password Anda kurang dari 8");
             alert.setContentText("Silahkan lengkapi terlebih dahulu");
             alert.showAndWait();
+            pfPassword.setText("");
         }else{
             System.out.println("Berhasil masuk");
             Parent scene2 = FXMLLoader.load(getClass().getResource("Multiscene.fxml"));

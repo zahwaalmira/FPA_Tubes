@@ -106,7 +106,7 @@ public class TableViewController implements Initializable {
 
     @FXML
     private void handleButtonTambah(ActionEvent event) {
-        openTabel(); 
+         
 
         String username = tfUsername.getText();
         String domisili = tfDomisili.getText();
@@ -134,6 +134,7 @@ public class TableViewController implements Initializable {
             alert.showAndWait();
         } else {
             System.out.println("Penambahan berhasil");
+            openTabel();
             dataPengguna.add(new Data(username, domisili, goldar, noTelp));
 
             tfUsername.setText("");
