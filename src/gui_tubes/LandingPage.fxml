@@ -10,7 +10,7 @@
    <children>
       <ImageView fitHeight="600.0" fitWidth="1000.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../img/Blue%20Modern%20Illustration%20Online%20Pharmacy%20Desktop%20Prototype%20%20%20(1000%20×%20600%20px).png" />
+            <Image url="@../img/aa.png" />
          </image>
       </ImageView>
       <JFXButton layoutX="818.0" layoutY="58.0" onAction="#handleButtonContactUs" ripplerFill="WHITE" text="HUBUNGI KAMI" textFill="#009aae">

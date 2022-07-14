@@ -10,7 +10,7 @@ package gui_tubes;
  */
 public class ArrayList<E> {
     private Object[] arrayList;
-    private static final int DEFAULT_CAPACITY = 40;
+    private static final int DEFAULT_CAPACITY = 150;
     private int size;
     
     public ArrayList() {

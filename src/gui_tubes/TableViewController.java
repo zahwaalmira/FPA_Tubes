@@ -141,7 +141,9 @@ public class TableViewController implements Initializable {
             tfDomisili.setText("");
             cbGoldar.getSelectionModel().clearSelection();
             tfNoTelp.setText("");
-
+            
+            pengguna.add(dataPengguna.get(dataPengguna.size()-1)); //index data pengguna yang terakhir dimasukkin ke observable list
+            tvData.setItems(pengguna);
             SaveAndCreate();
         }
 
@@ -160,6 +162,7 @@ public class TableViewController implements Initializable {
 
         } else {
             int i = selectionModel.getSelectedIndex();
+            System.out.println(i);
             dataPengguna.remove(i);
             pengguna.remove(i);
 
