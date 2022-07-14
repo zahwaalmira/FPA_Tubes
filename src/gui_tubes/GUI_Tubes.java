@@ -22,7 +22,7 @@ public class GUI_Tubes extends Application {
         
         Scene scene = new Scene(root);
         stage.setResizable(false);
-        
+        stage.setTitle("Selamat Datang di Goldarium!");
         stage.setScene(scene);
         stage.show();
     }

@@ -26,7 +26,7 @@
                </color>
             </InnerShadow>
          </effect></Pane>
-      <TextField fx:id="tfPencarian" layoutX="78.0" layoutY="93.0" prefHeight="38.0" prefWidth="681.0" promptText="Masukkan kata kunci pencarian" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #009AAE;" />
+      <TextField fx:id="tfPencarian" layoutX="78.0" layoutY="93.0" prefHeight="38.0" prefWidth="681.0" promptText="Masukkan domisili atau golongan darah" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #009AAE;" />
       <JFXButton layoutX="24.0" layoutY="86.0" onAction="#handleButtonCari" prefHeight="50.0" prefWidth="63.0" text="   " textFill="#ccdfe2">
          <graphic>
             <ImageView fitHeight="38.0" fitWidth="35.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">

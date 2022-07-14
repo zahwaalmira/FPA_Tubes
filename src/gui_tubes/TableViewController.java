@@ -37,6 +37,7 @@ public class TableViewController implements Initializable {
     XStream xstream = new XStream(new StaxDriver());
    
     ArrayList<Data> dataPengguna = new ArrayList<>();
+    Data pp;
     ObservableList pengguna = observableArrayList();
     Alert alert = new Alert(Alert.AlertType.WARNING);
     
@@ -161,9 +162,13 @@ public class TableViewController implements Initializable {
             alert.showAndWait();
 
         } else {
+            openTabel();
             int i = selectionModel.getSelectedIndex();
-            System.out.println(i);
+
             dataPengguna.remove(i);
+            
+            
+//            p.getUsername().remove(i);
             pengguna.remove(i);
 
             SaveAndCreate();

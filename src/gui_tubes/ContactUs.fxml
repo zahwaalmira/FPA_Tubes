@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
+<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -62,10 +62,10 @@
          </font>
       </Text>
       <Text layoutX="773.0" layoutY="423.0" strokeType="OUTSIDE" strokeWidth="0.0" text="21523042@students.uii.ac.id" />
-      <Button layoutX="92.0" layoutY="512.0" mnemonicParsing="false" onAction="#handleButtonKembali" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: WHITE; -fx-background-radius: 20; -fx-border-color: #009aae; -fx-border-radius: 20; -fx-border-width: 2;" text="Kembali" textFill="#009aae">
+      <JFXButton layoutX="92.0" layoutY="465.0" onAction="#handleButtonKembali" prefHeight="30.0" prefWidth="100.0" ripplerFill="#cdfaff" style="-fx-background-color: WHITE; -fx-background-radius: 20; -fx-border-color: #009aae; -fx-border-radius: 20; -fx-border-width: 2;" text="Kembali" textFill="#009aae">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
-      </Button>
+      </JFXButton>
    </children>
 </AnchorPane>

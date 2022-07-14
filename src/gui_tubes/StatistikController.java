@@ -96,23 +96,6 @@ public class StatistikController implements Initializable {
             dataGoldar.getData().add(new XYChart.Data("O-", totalOMIN));
             dataGoldar.getData().add(new XYChart.Data("AB-", totalABMIN));
    
-//        for (int i = 0; i < table.dataPengguna.size(); i++) {
-//            table.pengguna.add(table.dataPengguna.get(i));
-//        }
-//        data = new DataList();
-//        
-//        System.out.println(data.totalAPLUS);
-//        data.setDummy();
-//        data.dataChart();
-        
-//        dataGoldar.getData().add(new XYChart.Data("A+", data.totalAPLUS));
-//        dataGoldar.getData().add(new XYChart.Data("B+", data.totalBPLUS));
-//        dataGoldar.getData().add(new XYChart.Data("O+", data.totalOPLUS));
-//        dataGoldar.getData().add(new XYChart.Data("AB+", data.totalABPLUS));
-//        dataGoldar.getData().add(new XYChart.Data("A-", data.totalAMIN));
-//        dataGoldar.getData().add(new XYChart.Data("B-", data.totalBMIN));
-//        dataGoldar.getData().add(new XYChart.Data("O-", data.totalOMIN));
-//        dataGoldar.getData().add(new XYChart.Data("AB-", data.totalABMIN));
         
         
              
