@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1009.0" style="-fx-background-color: #eef4f5;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui_tubes.ContactUsController">
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1009.0" style="-fx-background-color: #eef4f5;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ContactUsController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#009aae" height="93.0" layoutX="-342.0" layoutY="262.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1352.0" />
       <ImageView fitHeight="135.0" fitWidth="155.0" layoutX="92.0" layoutY="237.0" pickOnBounds="true" preserveRatio="true">

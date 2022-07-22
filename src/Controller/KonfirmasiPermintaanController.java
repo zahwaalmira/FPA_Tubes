@@ -2,7 +2,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
  */
-package gui_tubes;
+package Controller;
+
 
 import java.net.URL;
 import java.util.Optional;
@@ -13,24 +14,12 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.Pane;
 
-/**
- * FXML Controller class
- *
- * @author zahwa
- */
 public class KonfirmasiPermintaanController implements Initializable {
     Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-    /**
-     * Initializes the controller class.
-     */
+   
     @FXML
     private Button btn1;
-    
-
     
     @FXML
     private void handleButtonBroadcast1(ActionEvent event) {
@@ -43,8 +32,8 @@ public class KonfirmasiPermintaanController implements Initializable {
                 + "Jumlah pendonor: 3\n"
                 + "Rumah Sakit: RS SILOAM\n"
                 + "Kontak: 081262626262");
-        Optional<ButtonType> result = alert.showAndWait();
-        if(result.get() == ButtonType.OK){
+        Optional<ButtonType> result = alert.showAndWait(); 
+        if(result.get() == ButtonType.OK){ //supaya kalo button "ok" dipencet button broadcastnya kedisable 
             btn1.setDisable(true);
         }
 
@@ -60,11 +49,8 @@ public class KonfirmasiPermintaanController implements Initializable {
                 + "Jumlah pendonor: 1\n"
                 + "Rumah Sakit: RS Sardjito\n"
                 + "Kontak: 081262343625");
-//        Optional<ButtonType> result1 =
+
                 alert.showAndWait();
-//        if(result1.get() == ButtonType.OK){
-//            btn2.setDisable(true);
-//        }
     }
         @FXML
     private void handleButtonBroadcast3(ActionEvent event) {

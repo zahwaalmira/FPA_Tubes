@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
  */
-package gui_tubes;
+package Controller;
 
 import java.io.IOException;
 import java.net.URL;
@@ -21,11 +21,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-/**
- * FXML Controller class
- *
- * @author zahwa
- */
+
 public class LoginController implements Initializable {
 
     @FXML
@@ -40,8 +36,6 @@ public class LoginController implements Initializable {
     @FXML
     private TextField tfPassword;
     
-    @FXML
-    private TextField tfReset;
     
     
     
@@ -67,7 +61,7 @@ public class LoginController implements Initializable {
             pfPassword.setText("");
         }else{
             System.out.println("Berhasil masuk");
-            Parent scene2 = FXMLLoader.load(getClass().getResource("Multiscene.fxml"));
+            Parent scene2 = FXMLLoader.load(getClass().getResource("/View/Multiscene.fxml"));
 
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
@@ -81,19 +75,11 @@ public class LoginController implements Initializable {
         }
     }
     
-    @FXML
-    private void handleButtonSceneRegister(ActionEvent event) throws IOException{
-        Alert alert = new Alert(AlertType.INFORMATION);
-            alert.setTitle("Informasi");
-            alert.setHeaderText("Saat ini Goldarium hanya tersedia versi admin");
-            alert.setContentText("Jika Anda Admin, silahkan masuk melalui form login");
-            alert.showAndWait();
-    }
-    
+  
     @FXML
     private void handleButtonSceneResetPW(ActionEvent event) throws IOException{
         
-        Parent scene2 = FXMLLoader.load(getClass().getResource("ResetPassword.fxml"));
+        Parent scene2 = FXMLLoader.load(getClass().getResource("/View/ResetPassword.fxml"));
         
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         
@@ -106,9 +92,10 @@ public class LoginController implements Initializable {
         System.out.println("Berhasil klik reset password");
     }
     
+    //untuk nunjukkin isi password yang udah diisi
     @FXML
     void changeVisibility(ActionEvent event) {
-        if (cbPassword.isSelected()) {
+        if (cbPassword.isSelected()) { //kalo checkbox dicentang
             tfPassword.setText(pfPassword.getText());
             tfPassword.setVisible(true);
             pfPassword.setVisible(false);

@@ -2,7 +2,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
  */
-package gui_tubes;
+package Controller;
+
 
 import java.io.IOException;
 import java.net.URL;
@@ -16,15 +17,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-/**
- * FXML Controller class
- *
- * @author zahwa
- */
 public class LandingPageController implements Initializable {
     @FXML
     private void handleButtonLandingPage(ActionEvent event) throws IOException{
-        Parent scene2 = FXMLLoader.load(getClass().getResource("Login.fxml"));
+        Parent scene2 = FXMLLoader.load(getClass().getResource("/View/Login.fxml"));
         
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         
@@ -39,7 +35,7 @@ public class LandingPageController implements Initializable {
     
     @FXML
     private void handleButtonContactUs(ActionEvent event) throws IOException{
-        Parent scene2 = FXMLLoader.load(getClass().getResource("ContactUs.fxml"));
+        Parent scene2 = FXMLLoader.load(getClass().getResource("/View/ContactUs.fxml"));
         
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         
@@ -52,9 +48,7 @@ public class LandingPageController implements Initializable {
         System.out.println("Berhasil klik hubungi kami");
     }
     
-    /**
-     * Initializes the controller class.
-     */
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO

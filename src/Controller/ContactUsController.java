@@ -2,8 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
  */
-package gui_tubes;
+package Controller;
 
+import gui_tubes.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -16,19 +17,13 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-/**
- * FXML Controller class
- *
- * @author zahwa
- */
+
 public class ContactUsController implements Initializable {
 
-    /**
-     * Initializes the controller class.
-     */
+   
     @FXML
     private void handleButtonKembali(ActionEvent event) throws IOException{
-        Parent scene2 = FXMLLoader.load(getClass().getResource("LandingPage.fxml"));
+        Parent scene2 = FXMLLoader.load(getClass().getResource("/View/LandingPage.fxml"));
         
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         

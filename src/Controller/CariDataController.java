@@ -2,8 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
  */
-package gui_tubes;
+package Controller;
 
+import Model.*;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.StaxDriver;
 import java.io.FileInputStream;
@@ -21,16 +22,13 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-/**
- * FXML Controller class
- *
- * @author zahwa
- */
+
 public class CariDataController implements Initializable {
     XStream xstream = new XStream(new StaxDriver());
 
-    ArrayList<Data> dataPengguna = new ArrayList<>();
-    ObservableList pengguna = observableArrayList();
+    private ArrayList<Data> dataPengguna = new ArrayList<>();
+    private ObservableList pengguna = observableArrayList();
+    
     @FXML
     private TableView<Data> tvData;
     
@@ -48,6 +46,7 @@ public class CariDataController implements Initializable {
     
     @FXML
     private TextField tfPencarian;
+    
     void openTabel() {
         FileInputStream berkasMasuk;
         try {
@@ -65,7 +64,6 @@ public class CariDataController implements Initializable {
             System.out.println("Terjadi kesalahan: " + e.getMessage());
         }
     }
-    
     
     @FXML
     private void handleButtonCari(ActionEvent event) {
@@ -93,9 +91,12 @@ public class CariDataController implements Initializable {
 
         tvData.setItems(pengguna);
         
+        //Bungkus objek tableview dalam FilteredList (awalnya menampilkan semua data)
         FilteredList<Data> filteredData = new FilteredList<>(tvData.getItems(), b -> true);
+        //Atur Predikat filter setiap kali filter berubah.
         tfPencarian.textProperty().addListener((observable, oldValue, newValue) -> {
             filteredData.setPredicate(pengguna -> {
+                // Jika teks filter kosong, tampilkan semua orang.
                 if (newValue == null || newValue.isEmpty()) {
                     return true;
                 }
@@ -110,10 +111,13 @@ public class CariDataController implements Initializable {
                 }
             });
         });
-        
+        // Bungkus FilteredList dalam SortedList.
         SortedList<Data> sortedData = new SortedList<>(filteredData);
+        // ikat komparator SortedList ke komparator TableView.
+        // Jika tidak, pengurutan TableView tidak akan berpengaruh.
         sortedData.comparatorProperty().bind(tvData.comparatorProperty());
         
+        //Tambahkan data yang sudah diurutkan (dan difilter) ke tabel.
         tvData.setItems(sortedData);
         
        

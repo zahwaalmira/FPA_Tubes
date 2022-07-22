@@ -2,13 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
  */
-package gui_tubes;
+package Controller;
 
+import Model.*;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.StaxDriver;
-import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -16,27 +15,21 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.XYChart;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.TextField;
 
-/**
- * FXML Controller class
- *
- * @author zahwa
- */
+
 public class StatistikController implements Initializable {
-     XStream xstream = new XStream(new StaxDriver());
-    ArrayList<Data> dataPengguna = new ArrayList<>();
-    Data data;
-    XYChart.Series<String, Integer> dataGoldar = new XYChart.Series<>();
-         int totalAPLUS = 0;
-    int totalBPLUS = 0;
-    int totalABPLUS = 0;
-    int totalOPLUS = 0;
-    int totalAMIN = 0;
-    int totalBMIN = 0;
-    int totalABMIN = 0;
-    int totalOMIN = 0;
+    XStream xstream = new XStream(new StaxDriver());
+    private ArrayList<Data> dataPengguna = new ArrayList<>();
+    private Data data;
+    private XYChart.Series<String, Integer> dataGoldar = new XYChart.Series<>();
+    private int totalAPLUS = 0;
+    private int totalBPLUS = 0;
+    private int totalABPLUS = 0;
+    private int totalOPLUS = 0;
+    private int totalAMIN = 0;
+    private int totalBMIN = 0;
+    private int totalABMIN = 0;
+    private int totalOMIN = 0;
     
     @FXML
     private BarChart bcGoldar;
@@ -66,8 +59,10 @@ public class StatistikController implements Initializable {
 
         openTabel();
 
-        for(int i = 0; i < dataPengguna.size(); i++){
+        for(int i = 0; i < dataPengguna.size(); i++){ //ambil objek dari arraylistlist untuk dimasukin ke dalam objek data
+            //biar bisa manggil method get set
            data = (Data) dataPengguna.get(i);
+           //nyocokin goldar pengguna 
            if(data.getGoldar().equals("A+")){
                totalAPLUS++;
            }else if(data.getGoldar().equals("B+")){
@@ -87,7 +82,8 @@ public class StatistikController implements Initializable {
            }
             
         }
-        dataGoldar.getData().add(new XYChart.Data("A+", totalAPLUS++));
+        //isi data goldar dan jumlah ke objek XYChart.Series
+            dataGoldar.getData().add(new XYChart.Data("A+", totalAPLUS));
             dataGoldar.getData().add(new XYChart.Data("B+", totalBPLUS));
             dataGoldar.getData().add(new XYChart.Data("O+", totalOPLUS));
             dataGoldar.getData().add(new XYChart.Data("AB+", totalABPLUS));
@@ -95,11 +91,9 @@ public class StatistikController implements Initializable {
             dataGoldar.getData().add(new XYChart.Data("B-", totalBMIN));
             dataGoldar.getData().add(new XYChart.Data("O-", totalOMIN));
             dataGoldar.getData().add(new XYChart.Data("AB-", totalABMIN));
-   
-        
-        
-             
-        bcGoldar.getData().addAll(dataGoldar);
+ 
+        //menambahkan objek XYChart.series di objek bar chart     
+        bcGoldar.getData().addAll(dataGoldar); //agar tampil di bar chart
     }    
     
 }

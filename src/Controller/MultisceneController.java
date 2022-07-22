@@ -2,8 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
  */
-package gui_tubes;
+package Controller;
 
+import gui_tubes.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -18,11 +19,6 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
-/**
- * FXML Controller class
- *
- * @author zahwa
- */
 public class MultisceneController implements Initializable {
     OpenScene bukaScene = new OpenScene();
     
@@ -45,6 +41,8 @@ public class MultisceneController implements Initializable {
     private void handleButtonHalamanStatistik(ActionEvent event) {
         Pane halaman = bukaScene.getPane("Statistik");
         mainPane.setCenter(halaman);
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setTitle("Statistik");
         System.out.println("Button halaman Statistik is clicked!");
     }
     
@@ -89,7 +87,7 @@ public class MultisceneController implements Initializable {
     
     @FXML
     private void handleButtonHalamanLogOut(ActionEvent event)throws IOException {
-        Parent scene2 = FXMLLoader.load(getClass().getResource("LandingPage.fxml"));
+        Parent scene2 = FXMLLoader.load(getClass().getResource("/View/LandingPage.fxml"));
         
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         

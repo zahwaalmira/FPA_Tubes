@@ -2,8 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
  */
-package gui_tubes;
+package Controller;
 
+import Model.*;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.StaxDriver;
 import java.io.File;
@@ -18,7 +19,6 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TableColumn;
@@ -28,17 +28,14 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 
-/**
- * FXML Controller class
- *
- * @author zahwa
- */
+
 public class TableViewController implements Initializable {
     XStream xstream = new XStream(new StaxDriver());
    
-    ArrayList<Data> dataPengguna = new ArrayList<>();
-    Data pp;
-    ObservableList pengguna = observableArrayList();
+    private ArrayList<Data> dataPengguna = new ArrayList<>();
+    
+    private ObservableList pengguna = observableArrayList();
+    
     Alert alert = new Alert(Alert.AlertType.WARNING);
     
      @FXML
@@ -114,9 +111,13 @@ public class TableViewController implements Initializable {
         String goldar = cbGoldar.getValue().toString();
         String noTelp = tfNoTelp.getText();
       
- 
-        if (!noTelp.matches("[0-9]+")) {
-            
+        if (username.isEmpty() || domisili.isEmpty() || goldar.isEmpty() 
+                || noTelp.isEmpty()) {
+            alert.setTitle("Perhatian");
+            alert.setHeaderText("Informasi data belum lengkap");
+            alert.setContentText("Silahkan lengkapi data yang masih kosong");
+            alert.showAndWait();
+        }else if (!noTelp.matches("[0-9]+")) {
             alert.setTitle("Perhatian");
             alert.setHeaderText("Nomor telepon harus berupa angka");
             alert.setContentText("Silahkan periksa kembali");
@@ -126,12 +127,6 @@ public class TableViewController implements Initializable {
             alert.setTitle("Perhatian");
             alert.setHeaderText("Jumlah digit nomor telepon harus 12");
             alert.setContentText("Silahkan periksa kembali");
-            alert.showAndWait();
-        } else if (username.isEmpty() || domisili.isEmpty() || goldar.isEmpty() 
-                || noTelp.isEmpty()) {
-            alert.setTitle("Perhatian");
-            alert.setHeaderText("Informasi data belum lengkap");
-            alert.setContentText("Silahkan lengkapi data yang masih kosong");
             alert.showAndWait();
         } else {
             System.out.println("Penambahan berhasil");
@@ -154,7 +149,8 @@ public class TableViewController implements Initializable {
     @FXML
     public void handleButtonHapus(ActionEvent event) {
         TableView.TableViewSelectionModel selectionModel = tvData.getSelectionModel();
-        selectionModel.setSelectionMode(SelectionMode.SINGLE);
+        selectionModel.setSelectionMode(SelectionMode.SINGLE); //menspesifikkan baris kolom mana yang ingin di hapus
+        int i = selectionModel.getSelectedIndex();
         if (selectionModel.isEmpty()) {
             alert.setTitle("Perhatian");
             alert.setHeaderText("Anda belum memilih data yang ingin dihapus");
@@ -163,12 +159,7 @@ public class TableViewController implements Initializable {
 
         } else {
             openTabel();
-            int i = selectionModel.getSelectedIndex();
-
             dataPengguna.remove(i);
-            
-            
-//            p.getUsername().remove(i);
             pengguna.remove(i);
 
             SaveAndCreate();
@@ -180,18 +171,20 @@ public class TableViewController implements Initializable {
     private void handleButtonEdit(ActionEvent event) {
             openTabel();
         
-        tvData.setEditable(true);
-        tcUsername.setCellFactory(TextFieldTableCell.forTableColumn());
+        tvData.setEditable(true); //buat table supaya bisa diedit
+        //textfieldtablecell untuk membuat textfield di dalam table column 
+        //dan memungkinkan untuk diedit ketike cellnya di double click
+        tcUsername.setCellFactory(TextFieldTableCell.forTableColumn()); 
         tcDomisili.setCellFactory(TextFieldTableCell.forTableColumn());
         tcGoldar.setCellFactory(TextFieldTableCell.forTableColumn());
         tcNoTelp.setCellFactory(TextFieldTableCell.forTableColumn());
         
-        tcUsername.setOnEditCommit(new EventHandler<CellEditEvent<Data, String>>(){
+        tcUsername.setOnEditCommit(new EventHandler<CellEditEvent<Data, String>>(){ //memproses pengeditan dan memberikan nilai yang diperbarui ke sel tabel yang sesuai.
             
             @Override
             public void handle(CellEditEvent<Data, String> event){
-                Data data = event.getRowValue();
-                data.setUsername(event.getNewValue());
+                Data data = event.getRowValue(); //ambil objek kelas data untuk baris yang sedang diedit
+                data.setUsername(event.getNewValue()); //update dengan data yg baru diedit lewat textfield
                 SaveAndCreate();
             }
                 
@@ -234,7 +227,6 @@ public class TableViewController implements Initializable {
             pengguna.add(dataPengguna.get(i));
         }
         tvData.setItems(pengguna);
-        SaveAndCreate();
         
     }
     
@@ -248,11 +240,14 @@ public class TableViewController implements Initializable {
         cbGoldar.setValue("Golongan Darah");
         cbGoldar.getItems().addAll("A+", "B+", "O+", "AB+", "A-", "B-", "O-", "AB-");
 
+        //Inisialisasi kolom tabel yang bersesuaian dengan atribut dari objek.
         tcUsername.setCellValueFactory(new PropertyValueFactory<>("username"));
         tcDomisili.setCellValueFactory(new PropertyValueFactory<>("domisili"));
         tcGoldar.setCellValueFactory(new PropertyValueFactory<>("goldar"));
         tcNoTelp.setCellValueFactory(new PropertyValueFactory<>("notelp"));
-
+        
+        //nampilin data dari arraylist ke table pake bantuan observablelist
+        //supaya pas diklik halamannya tabelnya sudah berisi data
         for (int i = 0; i < dataPengguna.size(); i++) {
             pengguna.add(dataPengguna.get(i));
 
@@ -260,7 +255,6 @@ public class TableViewController implements Initializable {
 
         tvData.setItems(pengguna);
 
-        SaveAndCreate();
         
 
     }

@@ -2,8 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
  */
-package gui_tubes;
+package Controller;
 
+import Model.*;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.StaxDriver;
 import java.io.File;
@@ -19,16 +20,12 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-/**
- * FXML Controller class
- *
- * @author zahwa
- */
+
 public class DaftarPenggunaController implements Initializable {
     XStream xstream = new XStream(new StaxDriver());
    
-    ArrayList<Data> dataPengguna = new ArrayList<>();
-    ObservableList pengguna = observableArrayList();
+    private ArrayList<Data> dataPengguna = new ArrayList<>();
+    private ObservableList pengguna = observableArrayList();
     
     
     @FXML
@@ -73,7 +70,8 @@ public class DaftarPenggunaController implements Initializable {
         tcDomisili.setCellValueFactory(new PropertyValueFactory<>("domisili"));
         tcGoldar.setCellValueFactory(new PropertyValueFactory<>("goldar"));
         tcNoTelp.setCellValueFactory(new PropertyValueFactory<>("notelp"));
-
+        
+        //nampilin data dari arraylist ke table pake bantuan observablelist
         for (int i = 0; i < dataPengguna.size(); i++) {
             pengguna.add(dataPengguna.get(i));
         }

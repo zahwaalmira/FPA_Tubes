@@ -10,7 +10,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #eef4f5;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui_tubes.DaftarPenggunaController">
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #eef4f5;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.DaftarPenggunaController">
    <children>
       <Pane layoutX="14.0" layoutY="72.0" opacity="0.39" prefHeight="516.0" prefWidth="772.0" style="-fx-background-color: C6E4E8; -fx-background-radius: 20;">
          <effect>
