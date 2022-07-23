@@ -67,31 +67,31 @@ public class TableViewController implements Initializable {
     
 
      
-    void openTabel() {
+    void openTabel() { //baca data //dari xml ke objek list
         FileInputStream berkasMasuk;
         try {
-            berkasMasuk = new FileInputStream("berkas.xml");
+            berkasMasuk = new FileInputStream("berkas.xml");//menerima data dari pembacaan file berformat xml bernama berkas.
             int isi;
             char c;
             String s = "";
-            while ((isi = berkasMasuk.read()) != - 1) {
-                c = (char) isi;
-                s = s + c;
+            while ((isi = berkasMasuk.read()) != - 1) { //Data byte dibaca dan dikonversi satu persatu ke char hingga ditemukan end of file.
+                c = (char) isi; //konversi dari byte ke char
+                s = s + c; //Kumpulan char disatukan dalam objek s bertipe String.
             }
-            dataPengguna = (ArrayList<Data>) xstream.fromXML(s);
+            dataPengguna = (ArrayList<Data>) xstream.fromXML(s); //objek s dikonversi ke objek arraylist
             berkasMasuk.close();
         } catch (Exception e) {
             System.out.println("Terjadi kesalahan: " + e.getMessage());
         }
     }
     
-    void SaveAndCreate(){
+    void SaveAndCreate(){ //simpan data //dari objek list ke xml
         FileOutputStream outputDoc;
-        String xml = xstream.toXML(dataPengguna);
+        String xml = xstream.toXML(dataPengguna);//Konversi objek dataPengguna ke format XML
         File f = new File("berkas.xml");
         try{
             byte[] data = xml.getBytes("UTF-8");
-            outputDoc = new FileOutputStream("berkas.xml");
+            outputDoc = new FileOutputStream("berkas.xml"); //menuliskan data tersebut ke file,dibutuhkan objek dari class FileOutputStream.
             outputDoc.write(data);
             outputDoc.close();
             System.out.println("Berhasil tambah/edit/hapus data");
@@ -131,7 +131,7 @@ public class TableViewController implements Initializable {
         } else {
             System.out.println("Penambahan berhasil");
             openTabel();
-            dataPengguna.add(new Data(username, domisili, goldar, noTelp));
+            dataPengguna.add(new Data(username, domisili, goldar, noTelp)); //nambahin atribut2 dari kelas data ke array list
 
             tfUsername.setText("");
             tfDomisili.setText("");
@@ -149,7 +149,7 @@ public class TableViewController implements Initializable {
     @FXML
     public void handleButtonHapus(ActionEvent event) {
         TableView.TableViewSelectionModel selectionModel = tvData.getSelectionModel();
-        selectionModel.setSelectionMode(SelectionMode.SINGLE); //menspesifikkan baris kolom mana yang ingin di hapus
+        selectionModel.setSelectionMode(SelectionMode.SINGLE); //menspesifikkan baris mana yang ingin di hapus
         int i = selectionModel.getSelectedIndex();
         if (selectionModel.isEmpty()) {
             alert.setTitle("Perhatian");
@@ -174,17 +174,20 @@ public class TableViewController implements Initializable {
         tvData.setEditable(true); //buat table supaya bisa diedit
         //textfieldtablecell untuk membuat textfield di dalam table column 
         //dan memungkinkan untuk diedit ketike cellnya di double click
+        //set cell factory = memberikan data yang terkandung dalam tiap cell
         tcUsername.setCellFactory(TextFieldTableCell.forTableColumn()); 
         tcDomisili.setCellFactory(TextFieldTableCell.forTableColumn());
         tcGoldar.setCellFactory(TextFieldTableCell.forTableColumn());
         tcNoTelp.setCellFactory(TextFieldTableCell.forTableColumn());
         
+        //CellEditEvent = Peristiwa yang dipicu saat pengguna melakukan pengeditan pada sel tabel.
+        //supaya kalo abis diedit ga balik seperti semula
         tcUsername.setOnEditCommit(new EventHandler<CellEditEvent<Data, String>>(){ //memproses pengeditan dan memberikan nilai yang diperbarui ke sel tabel yang sesuai.
             
             @Override
             public void handle(CellEditEvent<Data, String> event){
                 Data data = event.getRowValue(); //ambil objek kelas data untuk baris yang sedang diedit
-                data.setUsername(event.getNewValue()); //update dengan data yg baru diedit lewat textfield
+                data.setUsername(event.getNewValue()); //set dengan nilai yang baru dienter melalui textfield tadi 
                 SaveAndCreate();
             }
                 
@@ -222,7 +225,7 @@ public class TableViewController implements Initializable {
             }
                 
         });
-        
+        //absen isi arraylist yang baru, masukkan ke observablelist, set ke tabel
         for (int i = 0; i < dataPengguna.size(); i++){
             pengguna.add(dataPengguna.get(i));
         }
@@ -239,8 +242,9 @@ public class TableViewController implements Initializable {
         openTabel();
         cbGoldar.setValue("Golongan Darah");
         cbGoldar.getItems().addAll("A+", "B+", "O+", "AB+", "A-", "B-", "O-", "AB-");
-
-        //Inisialisasi kolom tabel yang bersesuaian dengan atribut dari objek.
+        
+        //Set cell value factory = digunakan untuk "memilih" bagian tertentu dari item TableView, yang harus ditampilkan dalam kolom tertentu.
+        //Inisialisasi kolom tabel sesuai dengan atribut dari objek kelas Data.
         tcUsername.setCellValueFactory(new PropertyValueFactory<>("username"));
         tcDomisili.setCellValueFactory(new PropertyValueFactory<>("domisili"));
         tcGoldar.setCellValueFactory(new PropertyValueFactory<>("goldar"));
